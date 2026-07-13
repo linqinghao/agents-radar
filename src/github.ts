@@ -216,18 +216,18 @@ const LABEL_COLORS: Record<string, string> = {
 };
 
 /**
- * Break GitHub URLs in issue body to prevent cross-repository references.
- * Inserts a zero-width space in "github.com" so GitHub's auto-linker
- * won't create "mentioned this issue" notifications on external repos.
+ * Break GitHub URLs and references in issue body to prevent cross-repository
+ * notifications ("mentioned this issue", @mention pings) on external repos.
  */
-function neutralizeGitHubRefs(text: string): string {
-  return (
-    text
-      // Prevent "mentioned this issue" cross-references
-      .replace(/https:\/\/github\.com\//g, "https://github\u200B.com/")
-      // Prevent @mention notifications — insert zero-width space after @
-      .replace(/@([a-zA-Z\d](?:[a-zA-Z\d]|-(?=[a-zA-Z\d])){0,38})/g, "@\u200B$1")
-  );
+function defangGitHubNotifications(body: string): string {
+  return body
+    .replace(
+      /https?:\/\/(?:www\.)?github\.com\/([A-Za-z0-9_.-]+)\/([A-Za-z0-9_.-]+)\/(issues|pull)\/(\d+)/g,
+      (_match, owner: string, repo: string, type: string, number: string) =>
+        `github[.]com/${owner}/${repo}/${type}/${number}`,
+    )
+    .replace(/\b([A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+)#(\d+)\b/g, "`$1#$2`")
+    .replace(/(^|[^\w`])@([A-Za-z0-9-]{1,39})\b/g, "$1@\u200B$2");
 }
 
 /**
@@ -269,7 +269,7 @@ export async function closeStaleIssues(days: number): Promise<number> {
 
 export async function createGitHubIssue(title: string, body: string, label: string): Promise<string> {
   const digestRepo = process.env["DIGEST_REPO"] ?? "";
-  body = neutralizeGitHubRefs(body);
+  body = defangGitHubNotifications(body);
   if (body.length > GITHUB_ISSUE_BODY_LIMIT) {
     body = body.slice(0, GITHUB_ISSUE_BODY_LIMIT - TRUNCATION_NOTICE.length) + TRUNCATION_NOTICE;
   }
