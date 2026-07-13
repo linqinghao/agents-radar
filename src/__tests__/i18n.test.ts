@@ -3,6 +3,7 @@ import {
   MSG,
   CLI_REPORT,
   OPENCLAW_REPORT,
+  GENUI_REPORT,
   WEB_REPORT,
   TRENDING_REPORT,
   HN_REPORT,
@@ -11,6 +12,7 @@ import {
   ISSUE_LABELS,
   CLI_ISSUE_TITLE,
   OPENCLAW_ISSUE_TITLE,
+  GENUI_ISSUE_TITLE,
   FOOTER,
   NOTIFY_LABELS,
 } from "../i18n.ts";
@@ -32,6 +34,9 @@ describe("bilingual string maps", () => {
     { name: "CLI_REPORT.detail", obj: CLI_REPORT.detail },
     { name: "OPENCLAW_REPORT.title", obj: OPENCLAW_REPORT.title },
     { name: "OPENCLAW_REPORT.deepDive", obj: OPENCLAW_REPORT.deepDive },
+    { name: "GENUI_REPORT.title", obj: GENUI_REPORT.title },
+    { name: "GENUI_REPORT.comparison", obj: GENUI_REPORT.comparison },
+    { name: "GENUI_REPORT.detail", obj: GENUI_REPORT.detail },
     { name: "WEB_REPORT.title", obj: WEB_REPORT.title },
     { name: "WEB_REPORT.firstCrawl", obj: WEB_REPORT.firstCrawl },
     { name: "TRENDING_REPORT.title", obj: TRENDING_REPORT.title },
@@ -66,6 +71,11 @@ describe("issue title functions", () => {
   it("OPENCLAW_ISSUE_TITLE produces zh and en titles", () => {
     expect(OPENCLAW_ISSUE_TITLE("2026-03-12", "zh")).toContain("OpenClaw");
     expect(OPENCLAW_ISSUE_TITLE("2026-03-12", "en")).toContain("OpenClaw Ecosystem Digest");
+  });
+
+  it("GENUI_ISSUE_TITLE produces zh and en titles", () => {
+    expect(GENUI_ISSUE_TITLE("2026-03-12", "zh")).toContain("生成式 UI");
+    expect(GENUI_ISSUE_TITLE("2026-03-12", "en")).toContain("Generative UI Ecosystem Digest");
   });
 
   it("WEB_REPORT.issueTitle includes first crawl flag", () => {
@@ -128,6 +138,8 @@ describe("ISSUE_LABELS", () => {
     expect(ISSUE_LABELS.cli.zh).toBe("digest");
     expect(ISSUE_LABELS.cli.en).toBe("digest-en");
     expect(ISSUE_LABELS.openclaw.zh).toBe("openclaw");
+    expect(ISSUE_LABELS.gui.zh).toBe("genui");
+    expect(ISSUE_LABELS.gui.en).toBe("genui-en");
     expect(ISSUE_LABELS.trending.en).toBe("trending-en");
     expect(ISSUE_LABELS.hn.en).toBe("hn-en");
   });
@@ -139,7 +151,16 @@ describe("ISSUE_LABELS", () => {
 
 describe("NOTIFY_LABELS", () => {
   it("covers all report types", () => {
-    const expected = ["ai-cli", "ai-agents", "ai-web", "ai-trending", "ai-hn", "ai-weekly", "ai-monthly"];
+    const expected = [
+      "ai-cli",
+      "ai-agents",
+      "ai-genui",
+      "ai-web",
+      "ai-trending",
+      "ai-hn",
+      "ai-weekly",
+      "ai-monthly",
+    ];
     for (const key of expected) {
       expect(NOTIFY_LABELS[key]).toBeDefined();
       expect(NOTIFY_LABELS[key]!.zh).toBeTruthy();

@@ -1,5 +1,9 @@
 import { describe, it, expect } from "vitest";
-import { buildCliReportContent, buildOpenclawReportContent } from "../report-builders.ts";
+import {
+  buildCliReportContent,
+  buildOpenclawReportContent,
+  buildGenuiReportContent,
+} from "../report-builders.ts";
 import type { RepoDigest } from "../prompts.ts";
 import type { GitHubItem, GitHubRelease } from "../github.ts";
 
@@ -147,5 +151,44 @@ describe("buildOpenclawReportContent", () => {
     expect(result).toContain("# OpenClaw Ecosystem Digest 2026-03-09");
     expect(result).toContain("OpenClaw Deep Dive");
     expect(result).toContain("Cross-Ecosystem Comparison");
+  });
+});
+
+// ---------------------------------------------------------------------------
+// buildGenuiReportContent
+// ---------------------------------------------------------------------------
+
+describe("buildGenuiReportContent", () => {
+  it("includes all sections (zh)", () => {
+    const digests = [
+      makeDigest({
+        config: { id: "a2ui", repo: "a2ui-project/a2ui", name: "a2ui" },
+        issues: [{ number: 1 } as unknown as GitHubItem],
+      }),
+      makeDigest({ config: { id: "openui", repo: "thesysdev/openui", name: "OpenUI" } }),
+    ];
+    const result = buildGenuiReportContent(
+      digests,
+      "Comparison content",
+      "2026-03-09 00:00",
+      "2026-03-09",
+      "\nfooter",
+      "zh",
+    );
+    expect(result).toContain("# 生成式 UI 生态日报 2026-03-09");
+    expect(result).toContain("Issues: 1");
+    expect(result).toContain("覆盖项目: 2 个");
+    expect(result).toContain("[a2ui](https://github.com/a2ui-project/a2ui)");
+    expect(result).toContain("横向生态对比");
+    expect(result).toContain("Comparison content");
+    expect(result).toContain("各项目详细报告");
+    expect(result).toContain("footer");
+  });
+
+  it("renders in English", () => {
+    const result = buildGenuiReportContent([makeDigest()], "comparison", "", "2026-03-09", "", "en");
+    expect(result).toContain("# Generative UI Ecosystem Digest 2026-03-09");
+    expect(result).toContain("Cross-Ecosystem Comparison");
+    expect(result).toContain("Per-Project Reports");
   });
 });

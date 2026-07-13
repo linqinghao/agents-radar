@@ -4,7 +4,7 @@
 
 import type { RepoConfig, RepoFetch } from "./github.ts";
 import type { RepoDigest } from "./prompts.ts";
-import { type Lang, CLI_REPORT, OPENCLAW_REPORT } from "./i18n.ts";
+import { type Lang, CLI_REPORT, OPENCLAW_REPORT, GENUI_REPORT } from "./i18n.ts";
 
 // ---------------------------------------------------------------------------
 // CLI Report
@@ -114,6 +114,58 @@ export function buildOpenclawReportContent(
     `\n\n---\n\n` +
     `## ${OPENCLAW_REPORT.peers[lang]}\n\n` +
     peerDetailSections +
+    footer
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Generative UI Report (equal peers, no primary)
+// ---------------------------------------------------------------------------
+
+export function buildGenuiReportContent(
+  genuiDigests: RepoDigest[],
+  comparison: string,
+  utcStr: string,
+  dateStr: string,
+  footer: string,
+  lang: Lang = "zh",
+): string {
+  const repoLinks = genuiDigests
+    .map((d) => `- [${d.config.name}](https://github.com/${d.config.repo})`)
+    .join("\n");
+
+  const totalIssues = genuiDigests.reduce((sum, d) => sum + d.issues.length, 0);
+  const totalPrs = genuiDigests.reduce((sum, d) => sum + d.prs.length, 0);
+
+  const title = `# ${GENUI_REPORT.title[lang]} ${dateStr}\n\n`;
+  const meta =
+    lang === "en"
+      ? `> Issues: ${totalIssues} | PRs: ${totalPrs} | Projects covered: ${genuiDigests.length} | Generated: ${utcStr} UTC\n\n`
+      : `> Issues: ${totalIssues} | PRs: ${totalPrs} | 覆盖项目: ${genuiDigests.length} 个 | 生成时间: ${utcStr} UTC\n\n`;
+
+  const detailSections = genuiDigests
+    .map((d) =>
+      [
+        `<details>`,
+        `<summary><strong>${d.config.name}</strong> — <a href="https://github.com/${d.config.repo}">${d.config.repo}</a></summary>`,
+        ``,
+        d.summary,
+        ``,
+        `</details>`,
+      ].join("\n"),
+    )
+    .join("\n\n");
+
+  return (
+    title +
+    meta +
+    `${repoLinks}\n\n` +
+    `---\n\n` +
+    `## ${GENUI_REPORT.comparison[lang]}\n\n` +
+    comparison +
+    `\n\n---\n\n` +
+    `## ${GENUI_REPORT.detail[lang]}\n\n` +
+    detailSections +
     footer
   );
 }

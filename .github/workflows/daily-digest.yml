@@ -40,6 +40,9 @@ jobs:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           PRODUCTHUNT_TOKEN: ${{ secrets.PRODUCTHUNT_TOKEN }}
           DIGEST_REPO: ${{ github.repository }}
+          # Only generate the ai-genui report for now; other reports are
+          # disabled. Remove this var (or set to empty) to restore all reports.
+          ONLY_REPORTS: ai-genui
         run: pnpm start
 
       - name: Commit digest files

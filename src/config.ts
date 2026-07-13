@@ -24,6 +24,7 @@ interface RawConfig {
   skills_repo?: string;
   openclaw?: RawRepoEntry;
   openclaw_peers?: RawRepoEntry[];
+  genui_repos?: RawRepoEntry[];
 }
 
 export interface RadarConfig {
@@ -31,6 +32,7 @@ export interface RadarConfig {
   skillsRepo: string;
   openclaw: RepoConfig;
   openclawPeers: RepoConfig[];
+  genuiRepos: RepoConfig[];
 }
 
 // ---------------------------------------------------------------------------
@@ -72,6 +74,13 @@ const DEFAULT_OPENCLAW_PEERS: RepoConfig[] = [
   { id: "zeroclaw", repo: "zeroclaw-labs/zeroclaw", name: "ZeroClaw" },
 ];
 
+const DEFAULT_GENUI_REPOS: RepoConfig[] = [
+  { id: "a2ui", repo: "a2ui-project/a2ui", name: "a2ui" },
+  { id: "openui", repo: "thesysdev/openui", name: "OpenUI" },
+  { id: "json-render", repo: "vercel-labs/json-render", name: "json-render" },
+  { id: "copilotkit", repo: "CopilotKit/CopilotKit", name: "CopilotKit", paginated: true },
+];
+
 // ---------------------------------------------------------------------------
 // Loader
 // ---------------------------------------------------------------------------
@@ -90,6 +99,7 @@ export function loadConfig(configPath = "config.yml"): RadarConfig {
       skillsRepo: DEFAULT_SKILLS_REPO,
       openclaw: DEFAULT_OPENCLAW,
       openclawPeers: DEFAULT_OPENCLAW_PEERS,
+      genuiRepos: DEFAULT_GENUI_REPOS,
     };
   }
 
@@ -112,10 +122,15 @@ export function loadConfig(configPath = "config.yml"): RadarConfig {
       ? raw.openclaw_peers.map(toRepoConfig)
       : DEFAULT_OPENCLAW_PEERS;
 
+  const genuiRepos =
+    Array.isArray(raw?.genui_repos) && raw.genui_repos.length > 0
+      ? raw.genui_repos.map(toRepoConfig)
+      : DEFAULT_GENUI_REPOS;
+
   console.log(
     `[config] Loaded from ${configPath}: ` +
-      `${cliRepos.length} CLI repos, ${openclawPeers.length} OpenClaw peers`,
+      `${cliRepos.length} CLI repos, ${openclawPeers.length} OpenClaw peers, ${genuiRepos.length} GenUI repos`,
   );
 
-  return { cliRepos, skillsRepo, openclaw, openclawPeers };
+  return { cliRepos, skillsRepo, openclaw, openclawPeers, genuiRepos };
 }

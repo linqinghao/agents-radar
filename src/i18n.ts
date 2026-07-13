@@ -47,6 +47,12 @@ export const OPENCLAW_REPORT = {
   peers: t("同赛道项目详细报告", "Peer Project Reports"),
 } as const;
 
+export const GENUI_REPORT = {
+  title: t("生成式 UI 生态日报", "Generative UI Ecosystem Digest"),
+  comparison: t("横向生态对比", "Cross-Ecosystem Comparison"),
+  detail: t("各项目详细报告", "Per-Project Reports"),
+} as const;
+
 export const WEB_REPORT = {
   title: t("AI 官方内容追踪报告", "Official AI Content Report"),
   firstCrawl: t("首次全量", "First full crawl"),
@@ -113,6 +119,7 @@ export const MONTHLY_REPORT = {
 export const ISSUE_LABELS = {
   cli: t("digest", "digest-en"),
   openclaw: t("openclaw", "openclaw-en"),
+  gui: t("genui", "genui-en"),
   web: t("web", "web-en"),
   trending: t("trending", "trending-en"),
   hn: t("hn", "hn-en"),
@@ -127,6 +134,9 @@ export const CLI_ISSUE_TITLE = (dateStr: string, lang: Lang) =>
 
 export const OPENCLAW_ISSUE_TITLE = (dateStr: string, lang: Lang) =>
   lang === "en" ? `🦞 OpenClaw Ecosystem Digest ${dateStr}` : `🦞 OpenClaw 生态日报 ${dateStr}`;
+
+export const GENUI_ISSUE_TITLE = (dateStr: string, lang: Lang) =>
+  lang === "en" ? `🎨 Generative UI Ecosystem Digest ${dateStr}` : `🎨 生成式 UI 生态日报 ${dateStr}`;
 
 // ---------------------------------------------------------------------------
 // Footer (used in report.ts)
@@ -149,6 +159,8 @@ export const REPORT_LABELS: Record<string, string> = {
   "ai-cli-en": "AI CLI Tools Digest",
   "ai-agents": "AI Agents 生态日报",
   "ai-agents-en": "AI Agents Ecosystem Digest",
+  "ai-genui": "生成式 UI 生态日报",
+  "ai-genui-en": "Generative UI Ecosystem Digest",
   "ai-web": "AI 官方内容追踪报告",
   "ai-web-en": "Official AI Content Report",
   "ai-trending": "AI 开源趋势日报",
@@ -172,6 +184,7 @@ export const REPORT_LABELS: Record<string, string> = {
 export const NOTIFY_LABELS: Record<string, Record<Lang, string>> = {
   "ai-cli": t("AI CLI 工具", "AI CLI Tools"),
   "ai-agents": t("AI Agents 生态", "AI Agents Ecosystem"),
+  "ai-genui": t("生成式 UI 生态", "Generative UI Ecosystem"),
   "ai-web": t("官网动态", "Official Updates"),
   "ai-trending": t("GitHub 趋势", "GitHub Trends"),
   "ai-hn": t("HN 社区动态", "HN Community"),

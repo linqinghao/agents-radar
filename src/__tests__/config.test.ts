@@ -39,6 +39,8 @@ describe("loadConfig", () => {
     expect(config.skillsRepo).toBe("anthropics/skills");
     expect(config.openclaw.id).toBe("openclaw");
     expect(config.openclawPeers.length).toBeGreaterThan(0);
+    expect(config.genuiRepos.length).toBeGreaterThan(0);
+    expect(config.genuiRepos[0]!.id).toBe("a2ui");
   });
 
   it("loads cli_repos from valid YAML", () => {
@@ -89,5 +91,18 @@ openclaw:
     vi.spyOn(fs, "readFileSync").mockReturnValue("openclaw:\n  id: partial\n");
     const config = loadConfig("test.yml");
     expect(config.openclaw.id).toBe("openclaw"); // default
+  });
+
+  it("parses genui_repos from YAML", () => {
+    vi.spyOn(fs, "existsSync").mockReturnValue(true);
+    vi.spyOn(fs, "readFileSync").mockReturnValue(`
+genui_repos:
+  - id: custom-gui
+    repo: org/custom-gui
+    name: Custom GUI
+`);
+    const config = loadConfig("test.yml");
+    expect(config.genuiRepos).toHaveLength(1);
+    expect(config.genuiRepos[0]!.id).toBe("custom-gui");
   });
 });

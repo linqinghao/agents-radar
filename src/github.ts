@@ -211,6 +211,8 @@ const LABEL_COLORS: Record<string, string> = {
   "hf-en": "ffb84d",
   community: "2563eb",
   "community-en": "60a5fa",
+  genui: "8b5cf6",
+  "genui-en": "c4b5fd",
 };
 
 /**
