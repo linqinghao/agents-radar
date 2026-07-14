@@ -216,15 +216,24 @@ const LABEL_COLORS: Record<string, string> = {
 };
 
 /**
- * Break GitHub URLs and references in issue body to prevent cross-repository
+ * Rewrite GitHub URLs and references to prevent cross-repository backlink
  * notifications ("mentioned this issue", @mention pings) on external repos.
+ *
+ * - github.com issue/PR URLs → redirect.github.com (preserves clickability,
+ *   GitHub does not create backlinks from redirect.github.com links per their
+ *   official documentation)
+ * - Shorthand `owner/repo#number` references → backtick-escaped (prevents
+ *   GitHub's autolinker from creating a backlink)
+ * - @mentions → zero-width space inserted (breaks autolink)
+ *
+ * Used both when creating GitHub issues and when saving markdown report files.
  */
-function defangGitHubNotifications(body: string): string {
+export function defangGitHubNotifications(body: string): string {
   return body
     .replace(
       /https?:\/\/(?:www\.)?github\.com\/([A-Za-z0-9_.-]+)\/([A-Za-z0-9_.-]+)\/(issues|pull)\/(\d+)/g,
       (_match, owner: string, repo: string, type: string, number: string) =>
-        `github[.]com/${owner}/${repo}/${type}/${number}`,
+        `https://redirect.github.com/${owner}/${repo}/${type}/${number}`,
     )
     .replace(/\b([A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+)#(\d+)\b/g, "`$1#$2`")
     .replace(/(^|[^\w`])@([A-Za-z0-9-]{1,39})\b/g, "$1@\u200B$2");

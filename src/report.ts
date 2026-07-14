@@ -5,6 +5,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { type Lang, FOOTER } from "./i18n.ts";
+import { defangGitHubNotifications } from "./github.ts";
 import { sleep } from "./date.ts";
 
 // ---------------------------------------------------------------------------
@@ -133,7 +134,7 @@ function repairJson(s: string): string {
 export function saveFile(content: string, ...segments: string[]): string {
   const filepath = path.join("digests", ...segments);
   fs.mkdirSync(path.dirname(filepath), { recursive: true });
-  fs.writeFileSync(filepath, content, "utf-8");
+  fs.writeFileSync(filepath, defangGitHubNotifications(content), "utf-8");
   return filepath;
 }
 
