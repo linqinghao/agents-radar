@@ -6,7 +6,591 @@
     <description>AI 开源生态每日简报 · Daily AI ecosystem digest</description>
     <language>zh-CN</language>
     <atom:link href="https://duanyytop.github.io/agents-radar/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Tue, 15 Sep 2026 04:08:35 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 04:05:57 +0000</lastBuildDate>
+    <item>
+      <title>生成式 UI 生态日报 2026-09-16</title>
+      <link>https://duanyytop.github.io/agents-radar/#2026-09-16/ai-genui</link>
+      <guid isPermaLink="true">https://duanyytop.github.io/agents-radar/#2026-09-16/ai-genui</guid>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
+      <description>生成式 UI 生态日报 2026-09-16 Issues: 22 | PRs: 115 | 覆盖项目: 4 个 | 生成时间: 2026-09-16 03:58 UTC a2ui OpenUI json-render CopilotKit 横向生态对比 生成式 UI 生态横向对比分析报告 (2026-09-16) 1. 生态全景 当前生成式 UI 生态正从基础的组件渲染层向复杂的 Agent 交互基础设施演进，多语言跨框架的严格对齐与运行时稳定性成为核心攻坚点。各项目在快速迭代中普遍面临依赖治理与历史架构债务的挑战，MCP（Model Context Protocol）的深度集成及企业级多租户诉求标志着该生态正加速向生产级 SaaS 场景渗透。同时，商业化 API 聚合与开源能力闭环的博弈，正重塑生成式 UI 的分发与获利模式。 2. 各项目活跃度对比 项目 Issues 动态 PRs 动态 新版本发布 核心推进状态 a2ui 9 (8 活跃/1 关闭) 16 (12 待合并/4 关闭) 0 跨引擎对齐攻坚 / 新库基建 / E2E 回归修复中 OpenUI ~3 (1 热点) 20...</description>
+      <content:encoded><![CDATA[<h1>生成式 UI 生态日报 2026-09-16</h1>
+<blockquote>
+<p>Issues: 22 | PRs: 115 | 覆盖项目: 4 个 | 生成时间: 2026-09-16 03:58 UTC</p>
+</blockquote>
+<ul>
+<li><a href="https://github.com/a2ui-project/a2ui">a2ui</a></li>
+<li><a href="https://github.com/thesysdev/openui">OpenUI</a></li>
+<li><a href="https://github.com/vercel-labs/json-render">json-render</a></li>
+<li><a href="https://github.com/CopilotKit/CopilotKit">CopilotKit</a></li>
+</ul>
+<hr>
+<h2>横向生态对比</h2>
+<h1>生成式 UI 生态横向对比分析报告 (2026-09-16)</h1>
+<h2>1. 生态全景</h2>
+<p>当前生成式 UI 生态正从基础的组件渲染层向复杂的 Agent 交互基础设施演进，多语言跨框架的严格对齐与运行时稳定性成为核心攻坚点。各项目在快速迭代中普遍面临依赖治理与历史架构债务的挑战，MCP（Model Context Protocol）的深度集成及企业级多租户诉求标志着该生态正加速向生产级 SaaS 场景渗透。同时，商业化 API 聚合与开源能力闭环的博弈，正重塑生成式 UI 的分发与获利模式。</p>
+<h2>2. 各项目活跃度对比</h2>
+<table>
+<thead>
+<tr>
+<th align="left">项目</th>
+<th align="left">Issues 动态</th>
+<th align="left">PRs 动态</th>
+<th align="left">新版本发布</th>
+<th align="left">核心推进状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>a2ui</strong></td>
+<td align="left">9 (8 活跃/1 关闭)</td>
+<td align="left">16 (12 待合并/4 关闭)</td>
+<td align="left">0</td>
+<td align="left">跨引擎对齐攻坚 / 新库基建 / E2E 回归修复中</td>
+</tr>
+<tr>
+<td align="left"><strong>OpenUI</strong></td>
+<td align="left">~3 (1 热点)</td>
+<td align="left">20 (15 已合并/关闭)</td>
+<td align="left">10</td>
+<td align="left">组件库大幅扩充 / 发版流重构 / 商业合作接洽</td>
+</tr>
+<tr>
+<td align="left"><strong>CopilotKit</strong></td>
+<td align="left">12 (9 活跃/3 关闭)</td>
+<td align="left">79 (40 待合并/39 关闭)</td>
+<td align="left">2</td>
+<td align="left">历史债务清理 / MCP 架构统一 / 运行时修复</td>
+</tr>
+<tr>
+<td align="left"><strong>json-render</strong></td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">静默期</td>
+</tr>
+</tbody></table>
+<h2>3. 共同关注的功能方向</h2>
+<ul>
+<li><strong>MCP 的深度集成与企业级增强</strong>：<ul>
+<li><strong>CopilotKit</strong> 与 <strong>a2ui</strong> 均在此发力。CopilotKit 侧重于多租户动态鉴权与同名工具前缀隔离（#2407, #2409）；a2ui 则聚焦于增强 MCP Payload 的独立数据处理能力（如 <code>jmespath</code> 提取），以减少宿主逻辑注入。</li>
+</ul>
+</li>
+<li><strong>依赖兼容性治理与发版自动化</strong>：<ul>
+<li><strong>OpenUI</strong> 与 <strong>a2ui</strong> 遭遇显著痛点。OpenUI 连续修复 Peer Dependency 冲突并全面转向 Changesets 自动化发版；a2ui 面临 Dart/Flutter 强版本绑定导致的生态隔离及 Swift 破坏性更新风险。</li>
+</ul>
+</li>
+<li><strong>供应链与消息安全防御</strong>：<ul>
+<li><strong>a2ui</strong> 与 <strong>CopilotKit</strong> 均暴露出安全漏洞积压。a2ui 亟待审查原型链污染与锁文件绕过 PR；CopilotKit 发现安全覆盖底限失效（#7166），反映出 Agent 消息注入与依赖劫持已成生成式 UI 的高危攻击面。</li>
+</ul>
+</li>
+</ul>
+<h2>4. 差异化定位分析</h2>
+<ul>
+<li><p><strong>a2ui：协议与多语言引擎的“底层基座”</strong></p>
+<ul>
+<li><strong>功能侧重</strong>：跨语言执行一致性（CLDR/校验/类型）、渲染器防劣化、MCP 数据处理扩展。</li>
+<li><strong>目标用户</strong>：需要跨前端/移动端/服务端严格 UI 协议对齐的底层架构团队。</li>
+<li><strong>技术路线</strong>：Schema 驱动 + 多引擎同构，当前正为 v1.0 严格对齐做最后冲刺。</li>
+</ul>
+</li>
+<li><p><strong>OpenUI：组件库与开发者体验的“前端尖刀”</strong></p>
+<ul>
+<li><strong>功能侧重</strong>：Chat/UI 组件扩充、云存储能力开源下沉、发版流自动化、第三方 API 聚合商接入。</li>
+<li><strong>目标用户</strong>：追求开箱即用、快速搭建 AI 交互界面的前端/全栈开发者。</li>
+<li><strong>技术路线</strong>：组件优先 + Headless Hook 下沉，通过放宽依赖窗口降低集成门槛。</li>
+</ul>
+</li>
+<li><p><strong>CopilotKit：Agent 运行时与跨框架集成的“中枢神经”</strong></p>
+<ul>
+<li><strong>功能侧重</strong>：运行时并发控制、v1/v2 架构债务清理、MCP 跨框架宿主抽取、多通道部署。</li>
+<li><strong>目标用户</strong>：构建复杂多 Agent 工作流与 SaaS 平台后端的企业级开发者。</li>
+<li><strong>技术路线</strong>：运行时为中心，正通过架构统一消除跨框架重复代码，强化可观测性与长连接稳定性。</li>
+</ul>
+</li>
+</ul>
+<h2>5. 社区热度与成熟度</h2>
+<ul>
+<li><strong>CopilotKit 社区最活跃且企业化程度最高</strong>：单日 79 个 PR 更新，Issue 讨论深入至多租户鉴权与运行时并发模型，但也背负了最沉重的历史债务（v1/v2 静默失效问题引发大量抱怨）。</li>
+<li><strong>OpenUI 处于极速迭代的组件扩充期</strong>：单日 10 个版本发布，组件库与 Hook 快速下沉，社区反馈集中于依赖安装体验，商业生态合作（AIML API）开始主动找上门，生态卡位价值初显。</li>
+<li><strong>a2ui 处于深水区攻坚期，成熟度要求最高</strong>：活跃度居中，但面临的都是硬核工程难题（跨端对齐、E2E 回归、架构分层错误），对稳定性与安全性的要求压倒了新功能交付速度。</li>
+</ul>
+<h2>6. 值得关注的趋势信号</h2>
+<ol>
+<li><strong>Agent 交互层正成为 LLM API 的商业分发入口</strong>：OpenUI 的 50/50 收入分成请求（#1188）证明，生成式 UI 框架已不仅是渲染层，更是模型调用的流量入口。<strong>参考价值</strong>：开发者在选型时应评估框架的 Provider 绑定策略与商业中立性。</li>
+<li><strong>“静默失效”比“显式报错”更摧毁社区信任</strong>：CopilotKit v1.50.0+ 的重构导致上下文丢失等静默失效，a2ui 因 PR 合并引发主分支 E2E 回归。<strong>参考价值</strong>：跨大版本重构必须引入运行时迁移警告与严格的 E2E 拦截机制，杜绝“编译通过但逻辑残缺”。</li>
+<li><strong>闭环能力下沉是开源突围的关键</strong>：OpenUI 将闭源的云存储 Hook 开源，直接响应了开发者“不引入商业包即无法完整闭环”的怨言。<strong>参考价值</strong>：生成式 UI 开源项目必须保证核心交互与状态持久化的基线能力开源，否则将流失至更轻量的替代方案。</li>
+<li><strong>MCP 从“连接协议”演变为“数据流处理管线”</strong>：社区不再满足于 MCP 仅做工具调用，而是要求其在 Payload 级别具备数据清洗与提取能力（a2ui #2650），并在运行时具备多租户隔离能力（CopilotKit #2407）。<strong>参考价值</strong>：在设计 Agent 架构时，需将 MCP 视为有状态的微服务网关，而非无状态的路由器。</li>
+</ol>
+<hr>
+<h2>各项目详细报告</h2>
+<details>
+<summary><strong>a2ui</strong> — <a href="https://github.com/a2ui-project/a2ui">a2ui-project/a2ui</a></summary>
+
+<h1>a2ui 项目动态日报 (2026-09-16)</h1>
+<h2>1. 今日速览</h2>
+<p>过去 24 小时，a2ui 项目保持了高度的工程活跃度，共处理了 9 条 Issue 动态（8 活跃/1 关闭）和 16 条 PR 动态（12 待合并/4 关闭）。项目核心推进力集中在 <strong>v1.0 版本的跨引擎严格对齐</strong>（Python/TS/Dart 的 CLDR 与校验一致性）以及 <strong>Dart 生态新库 <code>a2ui_agent</code> 的基础设施搭建</strong>。同时，社区在 Agent 推理架构评估和现代 Flutter 依赖兼容性上展开了积极讨论。需要注意的是，主分支出现了 E2E 测试回归，需维护者立即介入。</p>
+<h2>2. 版本发布</h2>
+<p>今日无新版本发布。</p>
+<h2>3. 项目进展</h2>
+<p>今日共有 4 条 PR 被合并或关闭，显著推进了跨引擎一致性、安全性与渲染器稳定性：</p>
+<ul>
+<li><strong>PR <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2608">#2608</a> (已关闭)</strong>: 修复了 Angular v0.8 Icon 组件的非字符串类型校验缺失问题，成功消除了动态解析时的 TypeError 隐患，对应关闭了 Issue <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2578">#2578</a>。</li>
+<li><strong>PR <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2656">#2656</a> (已关闭)</strong>: 将 Swift 依赖 <code>swift-json-schema</code> 约束限制在 0.13.x，避免了 0.14.0 带来的破坏性 API 变更（<code>JSONValue</code> 枚举重构），保障了 Swift 渲染器的编译稳定性。</li>
+<li><strong>PR <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2626">#2626</a> (已关闭)</strong>: 修复了 Swift <code>DataModel</code> 中畸形路径写入导致数据被破坏的严重缺陷。<em>(注：该 PR 关闭同期引发了主分支 E2E 测试失败，见 Bug 章节)</em>。</li>
+<li><strong>PR <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2537">#2537</a> (已关闭)</strong>: 扩展了 v1.0 协议一致性测试套件，并修复了 TS/Python/Kotlin 引擎与测试集的偏差，为后续多引擎严格对齐奠定了基准。</li>
+</ul>
+<h2>4. 社区热点</h2>
+<ul>
+<li><strong>Issue <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2373">#2373</a> (5 条评论)</strong>: 核心讨论围绕 Dart <code>a2ui_core</code> 需要暴露哪些 API 来支撑即将新建的 <code>a2ui_agent</code> 库。这是 P1 级别的高优先级架构前置任务，开发者正密集对齐 v0.9 与 1.0 的 API 需求边界。</li>
+<li><strong>Issue <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2643">#2643</a> (2 条评论)</strong>: 社区反馈 <code>a2ui_core</code> 中 <code>preact_signals</code> 版本锁定过死（^1.9.4），导致无法与现代 Flutter 生态（如 ^7.0.0）兼容。已有人提报 PR <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2667">#2667</a> 试图解决。</li>
+<li><strong>Issue <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2664">#2664</a> (2 条评论)</strong>: 探讨 A2UI Agent 部署中的两种核心推理策略（单体推理 vs 子代理 UI 移交）的性能开销对比，触及项目在复杂 Agent 场景下的架构演进方向。</li>
+</ul>
+<h2>5. Bug 与稳定性</h2>
+<p>按严重程度排列：</p>
+<ol>
+<li><strong>🔴 主分支 E2E 测试回归</strong>: <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2670">Issue #2670</a> - 主分支提交 <code>f5e945a</code> 触发 E2E 测试大面积失败，关联刚关闭的 PR <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2626">#2626</a>。<em>状态：需分诊，尚无 Fix PR。</em></li>
+<li><strong>🟠 Python 校验逻辑绕过</strong>: <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2579">Issue #2579</a> - Python SDK 中 <code>A2uiValidator</code> 存在逻辑缺陷，混合客户端/服务端消息时可绕过校验。<em>状态：已初步处理，尚无合并的 Fix PR。</em></li>
+<li><strong>🟡 Swift 架构分层错误</strong>: <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2668">Issue #2668</a> - <code>ExpressionParser</code> 被错误地放置在 <code>BasicCatalog</code> 而非 <code>A2UICore</code> 中，限制了其他 Catalog 复用该逻辑。<em>状态：需分诊，尚无 Fix PR。</em></li>
+<li><strong>🟢 Angular Icon 类型异常</strong>: <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2578">Issue #2578</a> - 已通过 PR <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2608">#2608</a> 修复并关闭。</li>
+</ol>
+<h2>6. 功能请求与路线图信号</h2>
+<ul>
+<li><strong>v1.0 引擎严格对齐堆栈</strong>: 今日涌现出一条完整的 PR 链（<a href="https://redirect.github.com/a2ui-project/a2ui/pull/2660">#2660</a> -&gt; <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2659">#2659</a> -&gt; <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2658">#2658</a> -&gt; <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2657">#2657</a>），分别处理 CLDR 国际化格式对齐、Dynamic 字段强类型校验、节点图解析与基础函数体补全。这强烈预示着项目正为 <strong>v1.0 的跨语言执行一致性</strong>做最后攻坚。</li>
+<li><strong>MCP 数据处理能力扩展</strong>: <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2650">PR #2650</a> 请求为 MCP Catalog 增加 <code>jmespath</code>、<code>regexCapture</code> 等函数，使 Payload 能独立处理原始工具输出，减少宿主逻辑。这极可能被纳入下版本，增强 Agent 自主性。</li>
+<li><strong>Agent 原生开发者工具链</strong>: <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2665">PR #2665</a> 提出引入无头 CLI、FastMCP 服务器等全套 DX 工具，旨在打通声明式 UI 协议与真实 CI/Agent 工作流的壁垒。</li>
+</ul>
+<h2>7. 用户反馈摘要</h2>
+<ul>
+<li><strong>依赖地狱痛点</strong>: Dart/Flutter 开发者在集成 <code>a2ui_core</code> 时深受版本约束冲突困扰（<a href="https://redirect.github.com/a2ui-project/a2ui/issues/2643">Issue #2643</a>），项目对底层信号库的强绑定阻碍了与现代状态管理库（如 <code>bloc_signals</code>）的协同使用。</li>
+<li><strong>跨平台评分受损</strong>: <code>genui.dart</code> 因媒体插件依赖导致 pub.dev 丢失 10 分及 Windows/Linux 平台标签（<a href="https://redirect.github.com/a2ui-project/a2ui/issues/2532">Issue #2532</a>），反映出 Dart 生态开发者对包体健壮性和分发评分的敏感与不满。</li>
+<li><strong>安全防御诉求</strong>: 针对原型链污染（<a href="https://redirect.github.com/a2ui-project/a2ui/pull/2606">PR #2606</a>）和发布脚本锁文件绕过（<a href="https://redirect.github.com/a2ui-project/a2ui/pull/2609">PR #2609</a>）的修复，暴露出用户对 Agent 消息注入攻击和供应链安全的强烈防御需求。</li>
+</ul>
+<h2>8. 待处理积压</h2>
+<ul>
+<li><strong><a href="https://redirect.github.com/a2ui-project/a2ui/pull/2606">PR #2606</a> &amp; <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2609">PR #2609</a></strong>: 这两项安全修复 PR 自 9 月 10 日开启至今仍处于 <code>needs review</code> 状态。鉴于其涉及 Python 核心原型污染及 Web 渲染器发布安全，建议维护团队优先进行 Code Review 并合入。</li>
+<li><strong><a href="https://redirect.github.com/a2ui-project/a2ui/issues/2373">Issue #2373</a></strong>: 作为 P1 级别且已活跃近一个月的前置架构 Issue，其 API 设计定稿将直接阻塞 <code>a2ui_agent</code> 的开发，需尽快推动闭环。</li>
+<li><strong><a href="https://redirect.github.com/a2ui-project/a2ui/pull/2538">PR #2538</a></strong>: Dart 校验器重构 PR 自 9 月 5 日待合并至今，需确认是否因依赖 #2373 的 API 定义而暂缓，以免产生合并冲突。</li>
+</ul>
+</details>
+
+<details>
+<summary><strong>OpenUI</strong> — <a href="https://github.com/thesysdev/openui">thesysdev/openui</a></summary>
+
+<h1>OpenUI 项目动态日报 (2026-09-16)</h1>
+<h2>1. 今日速览</h2>
+<p>过去 24 小时，OpenUI 项目呈现极高的开发活跃度，核心团队与自动化机器人协同推进了大量基础设施与组件库的更新。项目今日共处理了 20 条 PR（其中 15 条已合并/关闭），并成功发布了 10 个新版本，主要集中在自动化发布流建设与依赖兼容性修复上。功能层面，UI 组件库迎来大幅扩充，新增了多项 Chat 及基础组件；同时，云存储 Hook 开源化，进一步降低了社区用户的接入成本。整体而言，项目正处于发布流重构后的快速迭代期，生态与工具链建设同步推进。</p>
+<h2>2. 版本发布</h2>
+<p>今日共发布 10 个新版本，核心围绕 <strong>Changesets 自动化发布采用</strong> 与 <strong>Peer Dependencies 兼容性放宽</strong>，无破坏性 API 变更，但需注意依赖版本对齐问题。</p>
+<ul>
+<li><strong>@​openuidev/<a href="mailto:vue-lang@0.3.0">vue-lang@0.3.0</a></strong>, <strong>@​openuidev/<a href="mailto:svelte-lang@0.3.0">svelte-lang@0.3.0</a></strong>, <strong>@​openuidev/<a href="mailto:react-lang@0.3.0">react-lang@0.3.0</a></strong>, <strong>@​openuidev/<a href="mailto:lang-core@0.3.0">lang-core@0.3.0</a></strong>, <strong>@​openuidev/<a href="mailto:react-email@0.3.0">react-email@0.3.0</a></strong>, <strong>@​openuidev/<a href="mailto:react-ui@0.14.0">react-ui@0.14.0</a></strong>, <strong>@​openuidev/<a href="mailto:react-headless@0.14.0">react-headless@0.14.0</a></strong><ul>
+<li><strong>更新内容</strong>：全量采用 <a href="https://github.com/changesets/action">Changesets</a> 进行自动化发版管理（<a href="https://redirect.github.com/thesysdev/openui/pull/1069">#1069</a>）。<code>react-email</code> 明确了 <code>react-lang</code> 的 peer dependency 边界。</li>
+<li><strong>迁移注意</strong>：由于发版策略变更，建议相关包统一升级至 0.3.0 / 0.14.0 以上的新基线，避免与后续自动化发布的版本产生依赖冲突。</li>
+</ul>
+</li>
+<li><strong>@​openuidev/<a href="mailto:react-ui@0.16.1">react-ui@0.16.1</a></strong>, <strong>@​openuidev/<a href="mailto:react-headless@0.16.1">react-headless@0.16.1</a></strong><ul>
+<li><strong>更新内容</strong>：放宽了 <code>react-headless</code> 与 <code>react-ui</code> 的内部 peer dependency 窗口，以兼容 0.15.x 版本（<a href="https://redirect.github.com/thesysdev/openui/pull/1186">#1186</a>）。</li>
+</ul>
+</li>
+<li><strong>@​openuidev/<a href="mailto:observability-cloud@0.0.3">observability-cloud@0.0.3</a></strong><ul>
+<li><strong>更新内容</strong>：<code>SDK_VERSION</code> 现在在构建时从 <code>package.json</code> 动态提取，而非硬编码（<a href="https://redirect.github.com/thesysdev/openui/pull/1070">#1070</a>）。</li>
+</ul>
+</li>
+</ul>
+<h2>3. 项目进展</h2>
+<p>今日合并的 PR 显著推进了组件库功能丰富度、DevOps 流程与开源体验，项目整体向前迈出了坚实的一步：</p>
+<ul>
+<li><strong>UI 组件库大幅扩充</strong>：合并了 [#1<a href="https://github.com/thesysdev/openui/pull73">#1173</a> 与 <a href="https://redirect.github.com/thesysdevE/openui/pull/1182">#1182</a>，向 <code>openuiChatLibrary</code> 和基础 <code>openuiLibrary</code> 新增了 <code>InlineHeader</code>、<code>EditableTable</code>、<code>Chips</code>、<code>OptionCards</code>、<code>EntityList</code>、<code>MetricIndicatorInline</code> 等十余种组件，极大丰富了 Agent 交互界面与表单渲染能力。</li>
+<li><strong>核心 Hook 开源化</strong>：<a href="https://redirect.github.com/thesysdev/openui/pull/1179">#1179</a> 将 <code>useOpenuiCloudStorage</code> 从闭源包下沉至 <code>@openuidev/react-headless</code>，使开源社区用户可直接使用托管对话与 Artifact 存储能力。</li>
+<li><strong>CI/CD 与发版流修复</strong>：<a href="https://redirect.github.com/thesysdev/openui/pull/1175">#1176</a>-[#1176](; <a href="https://redirect.github.com/thesysdev/openui/pull/1176">https://redirect.github.com/thesysdev/openui/pull/1176</a>) �6)C 建立了发版后自动更新 Starter 模版的机制；<a href="https://redirect.github.com/thesysdev/openui/pull/1184">#1184</a> 与 <a href="https://redirect.github.com/thesysdev/openui/pull/1186">#1186</a> 修复了因 peer-window 不匹配导致的 CI 发版失败阻断问题。</li>
+<li><strong>回归测试与防劣化</strong>：<a href="https://redirect.github.com/thesysdev/openui/pull/1177">#1177</a> 针对 DeepAgents 上下文压缩摘要泄露到 UI 流的 Bug 增加了确定性回归测试。</li>
+</ul>
+<h2>4. 社区热点</h2>
+<p>今日新开 Issue <a href="https://redirect.github.com/thesysdev/openui/issues/1188">#1188</a> 是唯一的社区热点，但具备极高的生态合作价值。</p>
+<ul>
+<li><strong><a href="https://redirect.github.com/thesysdev/openui/issues/1188">50/50 RevShare Integration: OpenUI &amp; AIML API</a></strong>：AI 聚合平台 AIML API（声称拥有 40万+ 用户）主动请求成为 OpenUI 内置的验证提供者。该团队已在 Fork 中完成了所有技术对接工作，并提出 50/50 的收入分成模式。</li>
+<li><strong>背后诉求</strong>：反映出 OpenUI 作为 AI 智能体交互层，对上游模型聚合服务商具备显著的吸引力和生态卡位价值。社区对“开箱即用的多模型切换”需求强烈。</li>
+</ul>
+<h2>5. Bug 与稳定性</h2>
+<p>今日修复了多个阻碍发版与安装稳定性的关键问题，均已有 Fix PR 并合并：</p>
+<ol>
+<li><strong>[P0/阻断] Peer Dependency 窗口不匹配导致发版失败</strong>：<code>react-ui</code> 与 <code>react-headless</code> 0.16.0 发布时，因 <code>assistant-ui</code> 等包的 peer 限制被 <code>verify-peer-windows.mjs</code> 脚本阻断。已通过 <a href="https://redirect.github.com/thesysdev/openui/pull/1186">#1186</a> 修复。</li>
+<li><strong>[P1/安装失败] devtools 发版策略导致旧版依赖崩溃</strong>：将 devtools 作为 patch (0.1.x) 发布会被旧版 <code>react-lang 0.2.x</code> 的 <code>^0.1.0</code> 依赖拉取，引发 peer 冲突。已通过 <a href="https://redirect.github.com/thesysdev/openui/pull/1160">#1160</a> 修改为 minor (0.2.0) 发版规避。</li>
+<li><strong>[P2/渲染异常] DeepAgents 摘要泄露</strong>：DeepAgents 的 context-compaction 摘要以 Markdown 流式输出至客户端，导致 UI 渲染异常。虽为上游 Bug，但已通过 <a href="https://redirect.github.com/thesysdev/openui/pull/1177">#1177</a> 增加回归测试锁定当前行为防劣化。</li>
+</ol>
+<h2>6. 功能请求与路线图信号</h2>
+<ul>
+<li><strong>第三方 Provider 集成架构</strong>：<a href="https://redirect.github.com/thesysdev/openui/issues/1188">#1188</a> 传达出社区对 OpenUI 支持“多模型 API 聚合器”的强需求，若此 PR 被采纳，可能催生新的 Provider 插件化架构或商业分成模式。</li>
+<li><strong>Devtools 本地化发现与检测</strong>：<a href="https://redirect.github.com/thesysdev/openui/pull/1172">#1172</a> (Open) 正在为 OpenUI Devtools 添加本地部署发现弹窗与 Inspect 命令横幅，预示 Devtools 正向更智能的本地开发闭环演进。</li>
+<li><strong>CLI 架构重构</strong>：<a href="https://redirect.github.com/thesysdev/openui/pull/1174">#1174</a> (Open) 提议重构 CLI，结合 <a href="https://redirect.github.com/thesysdev/openui/pull/1181">#1181</a> 及 <a href="https://redirect.github.com/thesysdev/openui/pull/1183">#1183</a> 对模版与 Lockfile 的刷新动作，表明项目即将对脚手架工具链进行底层升级。</li>
+</ul>
+<h2>7. 用户反馈摘要</h2>
+<ul>
+<li><strong>开源边界与能力下沉</strong>：从 <a href="https://redirect.github.com/thesysdev/openui/pull/1179">#1179</a> 的合并及 <a href="https://redirect.github.com/thesysdev/openui/pull/1178">#1178</a> 的文档更新可以看出，用户对“仅依赖开源包即可实现完整闭环”有明确诉求，不希望为了使用云存储等基础能力被迫引入闭源商业包。</li>
+<li><strong>依赖兼容痛点</strong>：短时间内连续出现 <a href="https://redirect.github.com/thesysdev/openui/pull/1184">#1184</a>, <a href="https://redirect.github.com/thesysdev/openui/pull/1186">#1186</a>, <a href="https://redirect.github.com/thesysdev/openui/pull/1160">#1160</a> 三个修复 Peer Dependency 的 PR，反映出在 Monorepo 多包联动发版时，社区用户常遇到 <code>npm install</code> 时的 peer 冲突报错，项目组正在积极通过放宽版本窗口与调整发版节奏（Minor vs Patch）来缓解此痛点。</li>
+</ul>
+<h2>8. 待处理积压</h2>
+<ul>
+<li><strong><a href="https://redirect.github.com/thesysdev/openui/pull/1174">#1174 Refactor CLI</a></strong>：PR 描述目前为空模板，缺乏具体的重构范围与测试计划，需作者 @​AbhinRustagi 补充详细方案，否则难以推进 Review。</li>
+<li><strong><a href="https://redirect.github.com/thesysdev/openui/issues/1188">#1188 50/50 RevShare Integration: OpenUI &amp; AIML API</a></strong>：涉及商业合作与架构侵入性修改，需要 Core Team 评估开源合规性、维护成本及对现有架构的影响，极易成为长期挂起议题。</li>
+<li><strong><a href="https://redirect.github.com/thesysdev/openui/pull/1183">#1183 fix: refresh CLI template npm lockfiles</a></strong>：由 AI Bot 提交的依赖对齐修复，涉及包管理器一致性问题，需核心成员验证其锁文件更新是否引入了非预期变更。</li>
+</ul>
+</details>
+
+<details>
+<summary><strong>json-render</strong> — <a href="https://github.com/vercel-labs/json-render">vercel-labs/json-render</a></summary>
+
+<p>过去24小时无活动。</p>
+</details>
+
+<details>
+<summary><strong>CopilotKit</strong> — <a href="https://github.com/CopilotKit/CopilotKit">CopilotKit/CopilotKit</a></summary>
+
+<h1>CopilotKit 项目动态日报 (2026-09-16)</h1>
+<h2>1. 今日速览</h2>
+<p>过去 24 小时，CopilotKit 项目呈现出极高的开发活跃度与架构迭代速度。共有 79 个 PR 更新（待合并 40，已合并/关闭 39），12 个 Issue 更新（新开/活跃 9，已关闭 3），并发布了 2 个重要版本。项目当前的重心明显倾斜于 <strong>v1/v2 运行时的历史债务清理</strong>、<strong>MCP 跨框架架构统一</strong> 以及 <strong>遥测与文档体验的优化</strong>。整体项目健康度良好，社区参与度较高，核心维护者对历史遗留 Bug 响应迅速。</p>
+<h2>2. 版本发布</h2>
+<p>今日发布 2 个新版本，包含关键的 Bug 修复及破坏性变更，建议相关用户尽快评估升级：</p>
+<ul>
+<li><strong>v1.72.0</strong>: <ul>
+<li><strong>更新内容</strong>：修复了自 v1.50.0 重构以来静默失效的多个 v1 运行时接口；移除了 React Native 中已废弃的 <code>useRenderTool</code> 垫片。</li>
+<li><strong>迁移注意</strong>：仍在使用 React Native <code>useRenderTool</code> 的应用需在升级前迁移至新 API，否则将出现编译/运行错误。此次修复直接回应了长期悬而未决的 <a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/6408">#6408</a>。</li>
+</ul>
+</li>
+<li><strong>channels/v0.10.0</strong>: <ul>
+<li><strong>更新内容</strong>：精简了 Teams 和 Slack 频道包的依赖体积；修复了 Telegram 代码块格式化问题。</li>
+<li><strong>破坏性变更</strong>：对于<strong>自托管的 Teams 用户</strong>，<code>Microsoft Agents SDK</code> 和 <code>Express</code> 被降级为可选的对等依赖。自托管部署需手动确认并安装这些依赖，否则将导致 Teams 集成中断。</li>
+</ul>
+</li>
+</ul>
+<h2>3. 项目进展</h2>
+<p>今日共有 39 个 PR 被合并或关闭，重点推进了文档一致性、CI/CD 稳定性与运行时环境修复：</p>
+<ul>
+<li><strong>文档与入口体验优化</strong>：合并了 <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6889">#6889</a>（统一 coding-agent 提示词交互）和 <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/7154">#7154</a>（路由 Channels 文档页面至对应引导流程），大幅改善了开发者首次上手的连贯性。</li>
+<li><strong>运行时环境修复</strong>：合并了 <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/7066">#7066</a>，修复了 SPA 运行时中因继承的 <code>OPENAI_API_KEY</code> 覆盖项目 <code>.env</code> 导致的 <code>invalid_organization</code> 错误。</li>
+<li><strong>CI/CD 稳定性</strong>：合并了 <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/7180">#7180</a>，为冷启动的 Fleet 构建分配了更充裕的超时时间，避免了大规模集成测试被误杀。</li>
+</ul>
+<h2>4. 社区热点</h2>
+<p>今日讨论最活跃的 Issue 集中在 MCP 多租户能力与 v1 历史债务上：</p>
+<ul>
+<li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/6408">#6408</a> (15 评论)</strong>：v1.50.0 重构导致 v1 上下文树孤立。此问题自 8 月初被提出，引发了大量受影响用户的讨论，今日发布的 v1.72.0 已正式修复该回归缺陷。</li>
+<li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/2407">#2407</a> (6 评论, 2 👍)</strong>：支持带有动态 API 密钥的 MCP 服务器。多租户场景下的核心诉求，用户希望自托管运行时能在请求级别传递鉴权凭证，而非全局共享单一实例。</li>
+<li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/2409">#2409</a> (5 评论)</strong>：MCP 服务器同名工具应添加前缀。当接入多个 MCP 实例（如 Staging/Production）时，工具名冲突缺乏处理机制，这是企业级复杂集成场景的典型痛点。</li>
+</ul>
+<h2>5. Bug 与稳定性</h2>
+<p>今日报告的关键 Bug 涉及运行时并发、类型安全与供应链安全，按严重程度排列如下：</p>
+<ol>
+<li><strong>[高] 运行时并发取消缺陷</strong>：<a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/7149">#7149</a> 指出 <code>abortRun</code> 发送了线程级别的停止信号，延迟的停止请求可能会意外取消下一次 Run。目前尚无修复 PR，对长耗时 Agent 运行影响较大。</li>
+<li><strong>[中] v1 运行时单例解析限制</strong>：<a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/7116">#7116</a> 指出 v1 <code>CopilotRuntime</code> 仅解析一次 Agent，导致 MCP 客户端和动态 Actions 无法按请求隔离。这是 v1 架构限制，v2 已支持。</li>
+<li><strong>[中] 依赖安全覆盖失效</strong>：<a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/7166">#7166</a> 指出 13 个 <code>pnpm.overrides</code> 安全底限已低于漏洞要求的版本。<strong>已有修复 PR <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/7167">#7167</a></strong>。</li>
+<li><strong>[低] Slot 类型定义拒绝普通 FC</strong>：<a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/7158">#7158</a> 指出 input/header slots 存在与已修复的 #7126 相同的类型缺陷。<strong>已有修复 PR <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/7179">#7179</a></strong>，且被标记为 <code>good first issue</code>。</li>
+</ol>
+<h2>6. 功能请求与路线图信号</h2>
+<p>结合 Issue 与 PR，项目在 MCP 架构与可观测性上有明显的路线图演进信号：</p>
+<ul>
+<li><strong>MCP 跨框架架构统一</strong>：Issue <a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/6823">#6823</a> 提议提取共享 MCP Apps 宿主包，以消除 React/Vue/Angular 间的代码重复。<strong>PR <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/7161">#7161</a> 已实现该提议</strong>，将 Vue/Angular 收敛至 <code>@copilotkit/mcp-apps-renderer</code>，极大概率进入下个版本。</li>
+<li><strong>运行时可观测性增强</strong>：PR <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/7183">#7183</a> 及 <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/7177">#7177</a> 正在重构遥测系统，旨在识别运行时实际调用的供应商（OpenAI/Azure等），并取消匿名遥测采样，表明项目在为提供更精准的 Cloud/Local 调用分析铺路。</li>
+<li><strong>长连接稳定性</strong>：PR <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6984">#6984</a> 提出通过注入 comment frames 保持安静 SSE 流存活，这是优化流式输出体验的关键增强。</li>
+</ul>
+<h2>7. 用户反馈摘要</h2>
+<ul>
+<li><strong>痛点：v1/v2 过渡期的隐蔽破坏性变更</strong>：多个 Issue（#6408, #7116）反馈 v1.50.0 后的变更导致了“静默失效”，即代码不报错但功能残缺（如 Context 写入丢失、Agent 单例化），这极大地增加了用户的排查成本，呼吁项目在跨大版本重构时增加运行时迁移警告。</li>
+<li><strong>场景：多租户与多环境 MCP 接入</strong>：用户强烈需要按请求级别动态注入凭证（#2407）和区分同名工具（#2409），说明 CopilotKit 正在被越来越多地应用于 SaaS 平台后端，而非简单的单机 Wrapper。</li>
+<li><strong>反馈：类型导出不够友好</strong>：组件 Slot 的类型系统过度要求包含命名空间静态属性（#7158），导致用户自定义普通 FC 组件时被 TS 拒绝，开发者期望更宽松的组件传入约束。</li>
+</ul>
+<h2>8. 待处理积压</h2>
+<ul>
+<li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/2407">#2407</a> &amp; <a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/2409">#2409</a></strong>：分别创建于一年前，今日虽有活跃讨论，但仍无官方 PR 介入。MCP 动态鉴权与工具名去重是企级采用的关键卡点，建议维护团队明确纳入 Roadmap 或给出 Workaround。</li>
+<li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6984">#6984</a> &amp; <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6943">#6943</a></strong>：这两个 PR 分别解决了 SSE 流断开（核心稳定性）和 Python 侧元数据污染问题，已开启多日但仍未合并，需要核心成员跟进 Review 以防阻塞相关技术栈用户。</li>
+</ul>
+</details>
+
+<hr>
+<p><em>本日报由 <a href="https://github.com/linqinghao/agents-radar">agents-radar</a> 自动生成。</em></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Generative UI Ecosystem Digest 2026-09-16</title>
+      <link>https://duanyytop.github.io/agents-radar/#2026-09-16/ai-genui-en</link>
+      <guid isPermaLink="true">https://duanyytop.github.io/agents-radar/#2026-09-16/ai-genui-en</guid>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Generative UI Ecosystem Digest 2026-09-16 Issues: 22 | PRs: 115 | Projects covered: 4 | Generated: 2026-09-16 03:58 UTC a2ui OpenUI json-render CopilotKit Cross-Ecosystem Comparison 1. Ecosystem Overview The generative UI ecosystem on 2026-09-16 is characterized by high development velocity, with major projects intensely focused on infrastructure hardening, security, and stabilizing release pipelines. There is a clear industry shift from foundational UI rendering toward complex, agent-native env...</description>
+      <content:encoded><![CDATA[<h1>Generative UI Ecosystem Digest 2026-09-16</h1>
+<blockquote>
+<p>Issues: 22 | PRs: 115 | Projects covered: 4 | Generated: 2026-09-16 03:58 UTC</p>
+</blockquote>
+<ul>
+<li><a href="https://github.com/a2ui-project/a2ui">a2ui</a></li>
+<li><a href="https://github.com/thesysdev/openui">OpenUI</a></li>
+<li><a href="https://github.com/vercel-labs/json-render">json-render</a></li>
+<li><a href="https://github.com/CopilotKit/CopilotKit">CopilotKit</a></li>
+</ul>
+<hr>
+<h2>Cross-Ecosystem Comparison</h2>
+<h3>1. Ecosystem Overview</h3>
+<p>The generative UI ecosystem on 2026-09-16 is characterized by high development velocity, with major projects intensely focused on infrastructure hardening, security, and stabilizing release pipelines. There is a clear industry shift from foundational UI rendering toward complex, agent-native environments, driving demand for strict cross-engine protocol conformance and robust Model Context Protocol (MCP) integrations. As these frameworks mature and target enterprise production workloads, community scrutiny has pivoted to supply-chain security, multi-tenant isolation, and dependency management friction.</p>
+<h3>2. Activity Comparison</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Project</th>
+<th align="left">Issues Updated</th>
+<th align="left">PRs Updated</th>
+<th align="left">Releases</th>
+<th align="left">Primary Focus Today</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>a2ui</strong></td>
+<td align="left">9</td>
+<td align="left">16</td>
+<td align="left">0</td>
+<td align="left">Protocol conformance, Security hardening</td>
+</tr>
+<tr>
+<td align="left"><strong>OpenUI</strong></td>
+<td align="left">N/A*</td>
+<td align="left">20</td>
+<td align="left">10</td>
+<td align="left">Release pipeline fixes, UI component expansion</td>
+</tr>
+<tr>
+<td align="left"><strong>json-render</strong></td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">Dormant</td>
+</tr>
+<tr>
+<td align="left"><strong>CopilotKit</strong></td>
+<td align="left">12</td>
+<td align="left">79</td>
+<td align="left">2</td>
+<td align="left">Legacy debt resolution, MCP infrastructure</td>
+</tr>
+</tbody></table>
+<p><em>*OpenUI digest did not specify an aggregate issue count; activity was heavily PR-centric.</em></p>
+<h3>3. Shared Feature Directions</h3>
+<ul>
+<li><strong>MCP Infrastructure &amp; Extensibility (a2ui, CopilotKit):</strong> Both projects are heavily investing in MCP capabilities. a2ui is expanding its MCP catalog with data manipulation functions, while CopilotKit users are demanding dynamic API keys and tool namespacing for multi-tenant MCP setups.</li>
+<li><strong>Cross-Engine / Cross-Framework Parity (a2ui, CopilotKit):</strong> a2ui is enforcing byte-for-byte parity across Python, TS, Dart, and Swift for v1.0. CopilotKit is consolidating Vue, Angular, and React MCP hosts into a framework-agnostic core protocol to reduce duplication.</li>
+<li><strong>Supply-Chain &amp; Dependency Security (a2ui, OpenUI, CopilotKit):</strong> All active projects faced dependency friction today. a2ui is combating prototype pollution and lockfile bypasses; OpenUI resolved peer-dependency resolution failures; CopilotKit is updating <code>pnpm.overrides</code> security floors.</li>
+<li><strong>Agent-Native Architecture (a2ui, CopilotKit):</strong> a2ui is developing an agent-native toolchain (headless CLI, FastMCP) and benchmarking UI inference strategies. CopilotKit is decoupling agent resolution to support per-request MCP clients and dynamic actions.</li>
+</ul>
+<h3>4. Differentiation Analysis</h3>
+<ul>
+<li><strong>a2ui</strong> is fundamentally <strong>protocol-centric</strong>, targeting polyglot environments requiring strict dynamic typing and cross-engine schema validation (TS, Python, Dart, Swift). Its differentiator is byte-for-byte parity and agentic UI handoff strategies rather than specific UI components.</li>
+<li><strong>OpenUI</strong> is <strong>component and cloud-centric</strong>, targeting React developers needing rich, out-of-the-box interactive elements (tables, chips, metrics). It differentiates by migrating proprietary cloud storage capabilities (e.g., <code>useOpenuiCloudStorage</code>) into open-source headless packages, prioritizing DX and UI primitives.</li>
+<li><strong>CopilotKit</strong> is <strong>runtime and channel-centric</strong>, targeting enterprise SaaS deployments requiring multi-channel agents (Teams, Slack, Telegram). Its focus is on operational visibility (telemetry), legacy runtime debt resolution, and complex MCP lifecycle management (dynamic auth, namespacing).</li>
+<li><strong>json-render</strong> remains <strong>dormant</strong>, functioning currently as a passive specification or rendering utility rather than an actively developed framework.</li>
+</ul>
+<h3>5. Community Momentum &amp; Maturity</h3>
+<p><strong>CopilotKit</strong> exhibits the highest raw momentum (79 PRs, 39 merged) and maintains robust health through rapid triage of community bugs and external PRs. <strong>a2ui</strong> shows strong momentum in architectural design, evidenced by deep, sustained discussions around Dart agent APIs and UI inference benchmarking, indicating a community shaping foundational standards. <strong>OpenUI</strong> is rapidly iterating on release mechanics and component drops, demonstrating mature responsiveness to pipeline failures, though it faces typical scaling friction around dependency hell. Maturity indicators across the board include the discovery of deep security vectors (a2ui) and demands for enterprise multi-tenancy (CopilotKit), signaling these projects are transitioning from early-adopter tooling to production infrastructure.</p>
+<h3>6. Trend Signals</h3>
+<ul>
+<li><strong>MCP as the Enterprise Standard:</strong> The demand for dynamic API keys and tool name prefixing (CopilotKit) signals that MCP is moving beyond local dev tooling into multi-tenant, hosted SaaS routing where secure isolation is mandatory.</li>
+<li><strong>Subagent Handoffs over Monolithic Context:</strong> a2ui&#39;s evaluation of subagent UI handoffs versus monolithic multi-turn context indicates a coming architectural shift to optimize for agent latency, token cost, and context window limits.</li>
+<li><strong>Cloud Feature Democratization:</strong> OpenUI&#39;s migration of managed cloud storage to OSS reflects a competitive trend where frameworks must offer open-source cloud primitives to drive adoption, reserving proprietary tiers for advanced enterprise controls.</li>
+<li><strong>Strict Dependency Bounding as a Bottleneck:</strong> Across the ecosystem, strict peer dependencies and rapid underlying framework shifts (e.g., Flutter Signals v7, pnpm overrides) are creating severe integration friction. Projects that automate release parity and widen peer windows will capture frustrated enterprise developers.</li>
+</ul>
+<hr>
+<h2>Per-Project Reports</h2>
+<details>
+<summary><strong>a2ui</strong> — <a href="https://github.com/a2ui-project/a2ui">a2ui-project/a2ui</a></summary>
+
+<p>Here is the a2ui project digest for 2026-09-16:</p>
+<ol>
+<li><p><strong>Today&#39;s Overview</strong>
+The a2ui project exhibited high development velocity over the past 24 hours, with 16 pull requests updated (12 open, 4 merged/closed) and 9 issues updated (8 open, 1 closed). Activity is heavily concentrated on advancing v1.0 protocol conformance across multiple engines (Python, TypeScript, Dart, Swift) and hardening the system against security vulnerabilities and edge-case bugs. However, a recent E2E test failure on <code>main</code> requires immediate attention, slightly marring an otherwise highly productive day focused on cross-engine alignment and developer tooling expansion.</p>
+</li>
+<li><p><strong>Releases</strong>
+No new releases were recorded in this period.</p>
+</li>
+<li><p><strong>Project Progress</strong>
+Four PRs were merged/closed today, advancing stability, conformance, and security:</p>
+</li>
+</ol>
+<ul>
+<li><strong>Conformance Alignment:</strong> PR <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2537">#2537</a> was closed, having expanded the v1.0 protocol conformance suites and aligned the TypeScript, Python, and Kotlin engines, officially wiring the TS runner into CI.</li>
+<li><strong>Angular Security Fix:</strong> PR <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2608">#2608</a> was merged, guarding the v0.8 Icon component against non-string names (resolving Issue <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2578">#2578</a>).</li>
+<li><strong>Swift DataModel Fix:</strong> PR <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2626">#2626</a> was merged to stop malformed paths from destructively overwriting data in the Swift renderer.</li>
+<li><strong>Swift Dependency Pinning:</strong> PR <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2656">#2656</a> was merged, restricting <code>swift-json-schema</code> to <code>0.13.x</code> to avoid breaking API changes introduced in <code>0.14.0</code>.</li>
+</ul>
+<p>Significant ongoing work is visible in the 12 open PRs, notably the v1.0 stack (PRs <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2657">#2657</a>, <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2658">#2658</a>, <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2659">#2659</a>, <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2660">#2660</a>) which aligns locale formatting and strict schema validation between Python and TS engines, and the Dart node-resolution layer (PR <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2669">#2669</a>).</p>
+<ol start="4">
+<li><strong>Community Hot Topics</strong></li>
+</ol>
+<ul>
+<li><strong>Dart <code>a2ui_agent</code> API Design:</strong> Issue <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2373">#2373</a> (5 comments) remains highly active. It tracks the prerequisite changes in <code>a2ui_core</code> needed to support the new <code>a2ui_agent</code> library. The sustained discussion indicates complex architectural decisions being made around how agents will interface with the core framework.</li>
+<li><strong>UI Inference Strategies:</strong> Issue <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2664">#2664</a> (2 comments) introduces a vital architectural evaluation: benchmarking monolithic multi-turn context overhead versus a subagent UI handoff strategy. This signals the community and maintainers are actively optimizing for agent latency and cost.</li>
+<li><strong>Dart Signal Integration Friction:</strong> Issue <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2643">#2643</a> and PR <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2667">#2667</a> (2 comments each) highlight developer friction regarding the tightly pinned <code>preact_signals: ^1.9.4</code> dependency, which prevents integration with modern Flutter packages requiring <code>^7.0.0</code>.</li>
+</ul>
+<ol start="5">
+<li><strong>Bugs &amp; Stability</strong></li>
+</ol>
+<ul>
+<li><strong>[Critical] E2E Test Regression:</strong> Issue <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2670">#2670</a> reports that E2E tests failed on <code>main</code> following the merge of PR #2626. This represents an immediate stability blocker for the Swift renderer and requires triage.</li>
+<li><strong>[P2] Validation Bypass:</strong> Issue <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2579">#2579</a> reports a logic flaw in <code>A2uiValidator</code> where mixed client/server messages can bypass validation. Fix work is currently underway in open PR <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2538">#2538</a>.</li>
+<li><strong>[P2] Swift ExpressionParser Misplacement:</strong> Issue <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2668">#2668</a> notes that <code>ExpressionParser.swift</code> is currently in <code>BasicCatalog</code> instead of <code>A2UICore</code>, breaking reuse for other catalogs.</li>
+<li><strong>[P2] Unhandled TypeError (Resolved):</strong> Issue <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2578">#2578</a> was closed today after PR #2608 merged a type verification guard for the Angular Icon component.</li>
+</ul>
+<ol start="6">
+<li><strong>Feature Requests &amp; Roadmap Signals</strong></li>
+</ol>
+<ul>
+<li><strong>Agent-Native Tooling:</strong> PR <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2665">#2665</a> proposes an &quot;Agent-Native Developer Toolchain&quot; including a headless CLI, Lit render engine, and FastMCP server. This strongly signals a roadmap shift toward treating A2UI not just as a UI protocol, but as a programmable agent environment.</li>
+<li><strong>MCP Catalog Expansion:</strong> PR <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2650">#2650</a> seeks to add <code>jmespath</code>, <code>regexCapture</code>, and data manipulation functions to the MCP catalog. This signals a roadmap focus on empowering payloads to transform raw tool outputs independently without host-side logic.</li>
+<li><strong>Strict v1.0 Conformance:</strong> The stack of open PRs by gspencergoog (#2657, #2658, #2659, #2660) signals that the next major version bump will enforce strict dynamic typing, reject primitive type coercions, and mandate byte-for-byte cross-engine parity.</li>
+</ul>
+<ol start="7">
+<li><p><strong>User Feedback Summary</strong>
+Users and contributors are actively exposing integration pain points. Dart/Flutter developers are blocked by outdated signal dependencies (#2643), indicating a need for more frequent ecosystem dependency bumps. Security researchers and contributors have identified critical attack vectors—prototype pollution in Python (#2606) and lockfile bypasses in web release scripts (#2609)—showing that the project is reaching a maturity level where supply-chain and injection vulnerabilities are being heavily scrutinized. The submission of a community BindJS renderer (#2635) demonstrates healthy ecosystem adoption and a desire for platform-agnostic rendering alternatives.</p>
+</li>
+<li><p><strong>Backlog Watch</strong></p>
+</li>
+</ol>
+<ul>
+<li><strong>Issue <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2373">#2373</a> (P1):</strong> Open since August 24th, this prerequisite for the <code>a2ui_agent</code> library is still being actively discussed but lacks a finalized implementation path. Maintainer input is needed to unblock the Dart agent ecosystem.</li>
+<li><strong>PR <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2606">#2606</a> &amp; PR <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2609">#2609</a>:</strong> Both are security fixes (prototype pollution and lockfile bypass) that have been open for nearly a week and are marked <code>needs review</code>. Given their security implications, these require prioritized maintainer review and merge.</li>
+<li><strong>Issue <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2532">#2532</a> (P2):</strong> Open since September 4th regarding <code>genui.dart</code> losing pub.dev points due to media plugin import costs and missing Windows/Linux platform tags. This needs maintainer triage to improve Dart package discoverability and platform support.</li>
+</ul>
+</details>
+
+<details>
+<summary><strong>OpenUI</strong> — <a href="https://github.com/thesysdev/openui">thesysdev/openui</a></summary>
+
+<h3>1. Today&#39;s Overview</h3>
+<p>OpenUI experienced a highly active day, with 20 pull requests updated and 10 new package releases shipped, indicating a intensive phase of infrastructure hardening and feature expansion. The core team and automated bots focused heavily on resolving peer dependency conflicts that had previously blocked the release pipeline, allowing a backlog of changesets to finally publish. Feature work advanced notably in the React UI component library, while CI/CD automation was refined to streamline future releases and starter template synchronization. </p>
+<h3>2. Releases</h3>
+<p>A total of 10 packages were released, predominantly featuring the adoption of automated release management via changesets and critical peer dependency adjustments:</p>
+<ul>
+<li><strong>@​openuidev/<a href="mailto:react-ui@0.16.1">react-ui@0.16.1</a></strong>: Patch release widening the internal <code>react-headless</code>/<code>react-ui</code> peer windows to include 0.15.x versions, resolving a publish blocker (<a href="https://redirect.github.com/thesysdev/openui/pull/1186">PR #1186</a>).</li>
+<li><strong>@​openuidev/<a href="mailto:react-ui@0.14.0">react-ui@0.14.0</a></strong>: Minor release adopting automated release management via changesets (<a href="https://redirect.github.com/thesysdev/openui/pull/1069">PR #1069</a>).</li>
+<li><strong>@​openuidev/<a href="mailto:react-headless@0.16.1">react-headless@0.16.1</a></strong>: Patch release with no direct code changes (version bump for peer alignment).</li>
+<li><strong>@​openuidev/<a href="mailto:react-headless@0.14.0">react-headless@0.14.0</a></strong>: Minor release adopting changesets (<a href="https://redirect.github.com/thesysdev/openui/pull/1069">PR #1069</a>).</li>
+<li><strong>@​openuidev/<a href="mailto:observability-cloud@0.0.3">observability-cloud@0.0.3</a></strong>: Patch release where <code>SDK_VERSION</code> is now derived from package.json at build time instead of being hardcoded (<a href="https://redirect.github.com/thesysdev/openui/pull/1070">PR #1070</a>).</li>
+<li><strong>@​openuidev/<a href="mailto:react-email@0.3.0">react-email@0.3.0</a></strong>: Minor release adopting changesets; <code>@openuidev/react-lang</code> peer dependency now declares a bounded tested version (<a href="https://redirect.github.com/thesysdev/openui/pull/1069">PR #1069</a>).</li>
+<li><strong>@​openuidev/<a href="mailto:vue-lang@0.3.0">vue-lang@0.3.0</a></strong>, <strong>@​openuidev/<a href="mailto:svelte-lang@0.3.0">svelte-lang@0.3.0</a></strong>, <strong>@​openuidev/<a href="mailto:react-lang@0.3.0">react-lang@0.3.0</a></strong>, <strong>@​openuidev/<a href="mailto:lang-core@0.3.0">lang-core@0.3.0</a></strong>: Minor releases adopting automated release management via changesets for the lang-family packages (<a href="https://redirect.github.com/thesysdev/openui/pull/1069">PR #1069</a>).</li>
+</ul>
+<h3>3. Project Progress</h3>
+<p>Significant progress was made in merging 15 PRs, advancing both feature capabilities and release stability:</p>
+<ul>
+<li><strong>UI Component Expansion:</strong> Merged <a href="https://redirect.github.com/thesysdev/openui/pull/1173">PR #1173</a> and <a href="https://redirect.github.com/thesysdev/openui/pull/1182">PR #1182</a>, which added a suite of new components (InlineHeader, EditableTable, Chips/ChipItem, OptionCards, Icon, EntityList, MetricIndicatorInline, etc.) to both <code>openuiChatLibrary</code> and the base <code>openuiLibrary</code>.</li>
+<li><strong>Open-Source Cloud Storage:</strong> <a href="https://redirect.github.com/thesysdev/openui/pull/1179">PR #1179</a> moved <code>useOpenuiCloudStorage</code> from the proprietary <code>@openuidev/thesys</code> package into the open-source <code>@openuidev/react-headless</code>, enabling managed conversation/artifact storage for the broader community.</li>
+<li><strong>Release Pipeline Fixes:</strong> <a href="https://redirect.github.com/thesysdev/openui/pull/1184">PR #1184</a> and <a href="https://redirect.github.com/thesysdev/openui/pull/1186">PR #1186</a> resolved peer-window mismatches that broke the recent release publish. <a href="https://redirect.github.com/thesysdev/openui/pull/1160">PR #1160</a> and <a href="https://redirect.github.com/thesysdev/openui/pull/1159">PR #1159</a> fixed devtools versioning to prevent breaking older <code>react-lang</code> installs.</li>
+<li><strong>CI/CD &amp; Docs:</strong> <a href="https://redirect.github.com/thesysdev/openui/pull/1176">PR #1176</a> automated starter dependency updates post-release. <a href="https://redirect.github.com/thesysdev/openui/pull/1178">PR #1178</a> updated quickstart docs to use the standard React UI library.</li>
+</ul>
+<h3>4. Community Hot Topics</h3>
+<ul>
+<li><strong>Third-Party Provider Integration Proposal:</strong> <a href="https://redirect.github.com/thesysdev/openui/issues/1188">Issue #1188</a> (Open) proposes a 50/50 RevShare integration with AImlAPI. The author has already completed the technical work in a fork. This signals strong external interest from AI aggregators in leveraging OpenUI as a distribution channel, highlighting a community need for broader, seamlessly integrated LLM provider options.</li>
+</ul>
+<h3>5. Bugs &amp; Stability</h3>
+<ul>
+<li><strong>Critical - Release Pipeline Failure:</strong> The automated release workflow failed because <code>verify-peer-windows.mjs</code> blocked <code>react-ui</code>/<code>react-headless</code> 0.16.0 from publishing due to mismatched peer dependencies. <strong>Status:</strong> Fixed and merged in <a href="https://redirect.github.com/thesysdev/openui/pull/1186">PR #1186</a> and <a href="https://redirect.github.com/thesysdev/openui/pull/1184">PR #1184</a>.</li>
+<li><strong>High - DeepAgents Stream Leak:</strong> DeepAgents&#39; context-compaction summary was leaking into the OpenUI stream as plain markdown, breaking UI rendering. <strong>Status:</strong> Addressed in <a href="https://redirect.github.com/thesysdev/openui/pull/1177">PR #1177</a> by adding a deterministic regression test and docs, noting the root cause lies in DeepAgents rather than OpenUI&#39;s stream transformer.</li>
+<li><strong>Medium - Devtools Peer Dependency Break:</strong> Releasing devtools as a patch (0.1.x) would have broken existing <code>react-lang</code> 0.2.x installs due to unsatisfiable peer requirements. <strong>Status:</strong> Fixed by releasing as a minor version (0.2.0) in <a href="https://redirect.github.com/thesysdev/openui/pull/1160">PR #1160</a>.</li>
+<li><strong>Low - CLI Lockfile Drift:</strong> Npm and pnpm lockfiles drifted apart in CLI templates, failing a parity workflow. <strong>Status:</strong> Fix open in <a href="https://redirect.github.com/thesysdev/openui/pull/1183">PR #1183</a>.</li>
+</ul>
+<h3>6. Feature Requests &amp; Roadmap Signals</h3>
+<ul>
+<li><strong>Aggregated LLM Access:</strong> <a href="https://redirect.github.com/thesysdev/openui/issues/1188">Issue #1188</a> acts as a feature request for native, verified integrations with multi-model AI aggregators, potentially pointing toward a future &quot;provider marketplace&quot; or rev-share model in OpenUI.</li>
+<li><strong>Expanded UI Primitives:</strong> The merged component drops (<a href="https://redirect.github.com/thesysdev/openui/pull/1173">PR #1173</a>, <a href="https://redirect.github.com/thesysdev/openui/pull/1182">PR #1182</a>) signal a roadmap push toward providing rich, out-of-the-box interactive elements (tables, chips, metrics) for complex agent interfaces.</li>
+<li><strong>Local Deployment Tooling:</strong> Open <a href="https://redirect.github.com/thesysdev/openui/pull/1172">PR #1172</a> (Add local deploy popup and Inspect command banner) indicates upcoming enhancements to the DevTools extension aimed at simplifying local deployment discovery and inspection.</li>
+</ul>
+<h3>7. User Feedback Summary</h3>
+<ul>
+<li><strong>Pain Point - Framework Compatibility:</strong> Users attempting to integrate OpenUI with DeepAgents (via LangChain) experienced broken rendering when internal summarization leaked into the stream. The maintainers acknowledged this boundary, documenting the behavior and pinning it with a regression test rather than assuming responsibility for DeepAgents&#39; internal logic.</li>
+<li><strong>Pain Point - Peer Dependency Hell:</strong> Users/Consumers were encountering peer-dependency resolution failures during installs due to strict version bounding. The maintainers responded by widening ranges (e.g., allowing 0.15.x), improving backward/forward compatibility.</li>
+<li><strong>Use Case - Open Source Cloud Features:</strong> The migration of <code>useOpenuiCloudStorage</code> to the open-source headless package directly addresses user demand for accessible managed storage solutions without being locked into the proprietary <code>@openuidev/thesys</code> package.</li>
+</ul>
+<h3>8. Backlog Watch</h3>
+<ul>
+<li><strong><a href="https://redirect.github.com/thesysdev/openui/issues/1188">Issue #1188</a>:</strong> Freshly opened with 0 maintainer feedback. Requires triage to determine if the project is open to 50/50 rev-share provider integrations and whether the forked work meets architectural standards.</li>
+<li><strong><a href="https://redirect.github.com/thesysdev/openui/pull/1174">PR #1174</a>:</strong> The &quot;Refactor CLI&quot; PR is open but contains an empty description and an unchecked checklist. It requires elaboration from the author before it can be meaningfully reviewed.</li>
+<li><strong><a href="https://redirect.github.com/thesysdev/openui/pull/1175">PR #1175</a>:</strong> Open documentation PR regarding the Autofix library traveling as a system turn. It is explicitly blocked by an external repository merge (<code>thesysdev/muse#604</code>), requiring periodic cross-repo monitoring.</li>
+</ul>
+</details>
+
+<details>
+<summary><strong>json-render</strong> — <a href="https://github.com/vercel-labs/json-render">vercel-labs/json-render</a></summary>
+
+<p>No activity in the last 24 hours.</p>
+</details>
+
+<details>
+<summary><strong>CopilotKit</strong> — <a href="https://github.com/CopilotKit/CopilotKit">CopilotKit/CopilotKit</a></summary>
+
+<ol>
+<li><p><strong>Today&#39;s Overview</strong>
+CopilotKit exhibits high development velocity and active maintenance as of 2026-09-16, with 79 pull requests updated (39 merged/closed) and 12 issues processed in the last 24 hours. The release of two versions—core <code>v1.72.0</code> and <code>channels/v0.10.0</code>—highlights a focused effort on resolving legacy technical debt and optimizing dependency footprints. Key thematic trends for the day include hardening the Model Context Protocol (MCP) infrastructure, improving cross-framework consistency (React, Vue, Angular), and overhauling documentation for the new &quot;Intelligence&quot; product and AG2 1.0. Project health appears robust, with a high merge rate and maintainers actively triaging bugs and community contributions.</p>
+</li>
+<li><p><strong>Releases</strong></p>
+</li>
+</ol>
+<ul>
+<li><strong><a href="https://github.com/CopilotKit/CopilotKit/releases/tag/v1.72.0">v1.72.0</a>:</strong> Repairs several v1 runtime surfaces that were silently broken since the <code>v1.50.0</code> re-implementation. Additionally removes the deprecated <code>useRenderTool</code> shim from React Native.</li>
+<li><strong><a href="https://github.com/CopilotKit/CopilotKit/releases/tag/channels/v0.10.0">channels/v0.10.0</a>:</strong> Trims the dependency footprint for Teams and Slack channel packages, and fixes Telegram code-block formatting.<ul>
+<li><em>Breaking Change / Migration Note:</em> For self-hosted Microsoft Teams users, the Microsoft Agents SDK and Express are now <strong>optional peer dependencies</strong>. Self-hosters must manually install these packages to upgrade.</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li><strong>Project Progress</strong>
+Merged and closed PRs today advanced documentation, dependency security, and developer experience (DX).</li>
+</ol>
+<ul>
+<li><strong>Documentation &amp; Onboarding:</strong> Merged PRs unified coding-agent prompt affordances (<a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6889">#6889</a>), fixed SPA runtime environment precedence (<a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/7066">#7066</a>), and routed channel docs to proper onboarding intents (<a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/7154">#7154</a>). Active open PRs are revamping the homepage into a setup wizard (<a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/7013">#7013</a>) and updating AG2 integration docs for 1.0 (<a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/7109">#7109</a>).</li>
+<li><strong>Core &amp; Infrastructure:</strong> Progress was made on consolidating Vue and Angular MCP Apps hosts into a shared package (<a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/7161">#7161</a>), fixing send-serialization guards during initialization (<a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/7134">#7134</a>), and keeping quiet SSE streams alive with comment frames (<a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6984">#6984</a>).</li>
+<li><strong>Showcase &amp; CI:</strong> Adjusted cold fleet build timeouts (<a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/7180">#7180</a>) and added a travel workflow example (<a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6596">#6596</a>).</li>
+</ul>
+<ol start="4">
+<li><strong>Community Hot Topics</strong>
+The most actively discussed issues center around MCP flexibility and legacy runtime architecture:</li>
+</ol>
+<ul>
+<li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/6408">Issue #6408</a> (15 comments):</strong> V1 surfaces orphaned by the v1.50.0 re-implementation. This deep architectural issue regarding context trees lacking writers is directly addressed by today&#39;s <code>v1.72.0</code> release.</li>
+<li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/2407">Issue #2407</a> (6 comments, 2 👍):</strong> Request for MCP servers with dynamic API keys. Users running multi-tenant self-hosted runtimes need per-request authentication tokens passed to underlying management APIs, which current MCP registration doesn&#39;t support.</li>
+<li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/2409">Issue #2409</a> (5 comments):</strong> Duplicate tool names should be prefixed by MCP server name. Users registering multiple instances of the same MCP server (e.g., staging vs. prod) experience tool name collisions.</li>
+<li><em>Underlying Need:</em> The community is pushing for MCP to support enterprise-grade multi-tenancy and non-colliding namespace management.</li>
+</ul>
+<ol start="5">
+<li><strong>Bugs &amp; Stability</strong></li>
+</ol>
+<ul>
+<li><strong>Critical - Runtime Execution:</strong> <a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/7149">Issue #7149</a> reports that <code>abortRun</code> sends a thread-wide stop, meaning a delayed stop can inadvertently cancel the next run. (No fix PR yet).</li>
+<li><strong>High - MCP / V1 Architecture:</strong> <a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/7116">Issue #7116</a> notes v1 <code>CopilotRuntime</code> resolves agents once, breaking per-request MCP clients and dynamic actions. </li>
+<li><strong>High - Security:</strong> <a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/7166">Issue #7166</a> identifies 13 <code>pnpm.overrides</code> security floors that no longer exclude vulnerable versions. Fix PR <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/7167">#7167</a> is open.</li>
+<li><strong>Medium - DX / Typing:</strong> <a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/7158">Issue #7158</a> reports <code>input</code> and <code>header</code> slots rejecting plain FCs due to overly strict typing (same defect as #7126). Fix PR <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/7179">#7179</a> is open.</li>
+<li><strong>Low - Runtime Mode:</strong> <a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/7130">Issue #7130</a> (implied by PR #7178) notes runtime mode changes (e.g., env var rollback) aren&#39;t carried onto preserved proxy agents. Fix PR <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/7178">#7178</a> is open.</li>
+</ul>
+<ol start="6">
+<li><strong>Feature Requests &amp; Roadmap Signals</strong></li>
+</ol>
+<ul>
+<li><strong>MCP Multi-tenancy &amp; Namespacing:</strong> <a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/2407">Issue #2407</a> (Dynamic API keys) and <a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/2409">Issue #2409</a> (Tool name prefixing) are long-standing requests seeing renewed activity. Expect roadmap inclusion as MCP enterprise adoption grows.</li>
+<li><strong>Cross-Framework Parity:</strong> <a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/6823">Issue #6823</a> and PR <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/7161">#7161</a> signal a move toward a unified, framework-agnostic core protocol for MCP Apps, reducing per-framework duplication.</li>
+<li><strong>Telemetry &amp; Observability:</strong> PR <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/7183">#7183</a> (reporting which AI vendor a runtime actually calls) and PR <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/7177">#7177</a> (unsampling anonymous telemetry) indicate a push toward better operational visibility for production deployments.</li>
+</ul>
+<ol start="7">
+<li><strong>User Feedback Summary</strong></li>
+</ol>
+<ul>
+<li><strong>Pain Points:</strong> Developers are frustrated by silent runtime failures introduced in past refactors (v1.50.0), which broke readable contexts without obvious errors. React developers experience DX friction when slotting custom components due to TypeScript requiring static namespaces on plain functional components (<a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/7158">Issue #7158</a>). Python users hit metadata mutation bugs in LangChain (<a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6943">PR #6943</a>).</li>
+<li><strong>Use Cases:</strong> Users are actively deploying CopilotKit in multi-tenant SaaS setups requiring dynamic MCP authentication, and running multiple environments (staging/prod) of the same MCP server simultaneously.</li>
+<li><strong>Satisfaction:</strong> Maintainers are highly responsive to community bug reports and external PRs. The prompt triaging of the slot-typing bugs and dependency overrides demonstrates strong engagement, though long-running feature requests (like dynamic API keys) remain a point of friction.</li>
+</ul>
+<ol start="8">
+<li><strong>Backlog Watch</strong></li>
+</ol>
+<ul>
+<li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/2407">Issue #2407</a> &amp; <a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/2409">Issue #2409</a>:</strong> Open since September 2025, these MCP feature requests are critical for enterprise/self-hosted adoption but lack assigned maintainer PRs. </li>
+<li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/7149">Issue #7149</a>:</strong> Opened yesterday, this thread-wide <code>abortRun</code> bug has high blast radius for runtime stability and needs prioritized maintainer review.</li>
+<li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/592">Issue #592</a>:</strong> The Renovate Dependency Dashboard is perpetually open and may need manual intervention given the recurring issues with security override floors (<a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/7166">Issue #7166</a>).</li>
+</ul>
+</details>
+
+<hr>
+<p><em>This digest is auto-generated by <a href="https://github.com/linqinghao/agents-radar">agents-radar</a>.</em></p>
+]]></content:encoded>
+    </item>
     <item>
       <title>生成式 UI 生态日报 2026-09-15</title>
       <link>https://duanyytop.github.io/agents-radar/#2026-09-15/ai-genui</link>
@@ -7324,589 +7908,6 @@ Users are expressing frustration with UI rendering edge cases (virtual scrolling
 <li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6592">PR #6592</a></strong>: Critical Python SDK fix for LangGraph 500 errors. Open since 2026-08-20, this needs urgent maintainer review and merge to unblock Python users.</li>
 <li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/1270">Issue #1270</a></strong>: Open since Jan 2025, this FastAPI configuration request has sustained community interest but no assignee. It deserves architectural triage.</li>
 <li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6754">PR #6754</a></strong>: Open since 2026-08-28, this PR to truncate oversized application-context values is a high-value cost-optimization feature awaiting final review and merge.</li>
-</ul>
-</details>
-
-<hr>
-<p><em>This digest is auto-generated by <a href="https://github.com/linqinghao/agents-radar">agents-radar</a>.</em></p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>生成式 UI 生态日报 2026-09-01</title>
-      <link>https://duanyytop.github.io/agents-radar/#2026-09-01/ai-genui</link>
-      <guid isPermaLink="true">https://duanyytop.github.io/agents-radar/#2026-09-01/ai-genui</guid>
-      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
-      <description>生成式 UI 生态日报 2026-09-01 Issues: 11 | PRs: 123 | 覆盖项目: 4 个 | 生成时间: 2026-09-01 04:13 UTC a2ui OpenUI json-render CopilotKit 横向生态对比 生成式 UI 生态动态横向对比分析报告 (2026-09-01) 1. 生态全景 当前生成式 UI 生态正经历从“单一框架可用”向“跨端跨框架通用渲染”的架构跃迁，核心项目均将多框架/多平台适配作为首要攻坚方向。同时，底层基建正在走向成熟，依赖治理（如 Zod 单例化）、发布流水线自动化与云托管权限体系重构成为今日主旋律。在 AI 驱动的前端交互上，前端工具注册与 HITL（Human-in-the-loop）闭环的稳定性受到前所未有的重视，行业正从功能累积迈向企业级稳定性与多端架构的深水区。 2. 各项目活跃度对比 项目 Issues 新增/关闭 PRs 活跃/合并关闭 版本发布情况 核心动态特征 a2ui 6 / 0 44 / 16 无 (发版准备中) 跨框架重构群 PR 挂起，Evals 评估失败阻塞主线 OpenUI 0 / ...</description>
-      <content:encoded><![CDATA[<h1>生成式 UI 生态日报 2026-09-01</h1>
-<blockquote>
-<p>Issues: 11 | PRs: 123 | 覆盖项目: 4 个 | 生成时间: 2026-09-01 04:13 UTC</p>
-</blockquote>
-<ul>
-<li><a href="https://github.com/a2ui-project/a2ui">a2ui</a></li>
-<li><a href="https://github.com/thesysdev/openui">OpenUI</a></li>
-<li><a href="https://github.com/vercel-labs/json-render">json-render</a></li>
-<li><a href="https://github.com/CopilotKit/CopilotKit">CopilotKit</a></li>
-</ul>
-<hr>
-<h2>横向生态对比</h2>
-<h1>生成式 UI 生态动态横向对比分析报告 (2026-09-01)</h1>
-<h2>1. 生态全景</h2>
-<p>当前生成式 UI 生态正经历从“单一框架可用”向“跨端跨框架通用渲染”的架构跃迁，核心项目均将多框架/多平台适配作为首要攻坚方向。同时，底层基建正在走向成熟，依赖治理（如 Zod 单例化）、发布流水线自动化与云托管权限体系重构成为今日主旋律。在 AI 驱动的前端交互上，前端工具注册与 HITL（Human-in-the-loop）闭环的稳定性受到前所未有的重视，行业正从功能累积迈向企业级稳定性与多端架构的深水区。</p>
-<h2>2. 各项目活跃度对比</h2>
-<table>
-<thead>
-<tr>
-<th align="left">项目</th>
-<th align="left">Issues 新增/关闭</th>
-<th align="left">PRs 活跃/合并关闭</th>
-<th align="left">版本发布情况</th>
-<th align="left">核心动态特征</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>a2ui</strong></td>
-<td align="left">6 / 0</td>
-<td align="left">44 / 16</td>
-<td align="left">无 (发版准备中)</td>
-<td align="left">跨框架重构群 PR 挂起，Evals 评估失败阻塞主线</td>
-</tr>
-<tr>
-<td align="left"><strong>OpenUI</strong></td>
-<td align="left">0 / 0</td>
-<td align="left">15 / 8</td>
-<td align="left">无</td>
-<td align="left">PR 驱动极强，AI Bot 协作常态化，全面转向 Cloud 架构</td>
-</tr>
-<tr>
-<td align="left"><strong>json-render</strong></td>
-<td align="left">0 / 0</td>
-<td align="left">6 / 5</td>
-<td align="left">无 (v0.19.1 待发布)</td>
-<td align="left">底层依赖治理与构建修复，社区交互平缓，PR 审查周期长</td>
-</tr>
-<tr>
-<td align="left"><strong>CopilotKit</strong></td>
-<td align="left">3 / 3</td>
-<td align="left">36 / 36</td>
-<td align="left"><strong>v1.70.0</strong></td>
-<td align="left">交付节奏稳健，修复关键前端工具 Bug，推进 V2 架构迁移</td>
-</tr>
-</tbody></table>
-<h2>3. 共同关注的功能方向</h2>
-<ul>
-<li><strong>跨框架/跨平台渲染支持</strong>：打破 React/WebKit 锁定是当前生态最大公约数。<ul>
-<li><strong>a2ui</strong> 通过 Light DOM 迁移扫清 Web Components 跨框架障碍，并推进 Angular/React 通用渲染；</li>
-<li><strong>CopilotKit</strong> 开始试水 Vue 3/Vite 生态支持；</li>
-<li><strong>json-render</strong> 为 MCP 引入了 Svelte/Vue 客户端；</li>
-<li><strong>a2ui</strong> 社区对 Dart/Flutter 生态的呼声极高，移动端拓展意图明显。</li>
-</ul>
-</li>
-<li><strong>依赖治理与核心包轻量化</strong>：解决 AI 应用复杂的依赖树冲突。<ul>
-<li><strong>json-render</strong> 将 <code>zod</code> 剥离为 peer dependency，解决双实例运行时冲突；</li>
-<li><strong>a2ui</strong> 收紧 JSON Schema 校验，并升级 Python SDK 类型系统；</li>
-<li><strong>CopilotKit</strong> 解决了 Lambda 环境中 <code>@copilotkit/shared</code> 依赖重复的问题。</li>
-</ul>
-</li>
-<li><strong>云端托管与一键部署基建</strong>：从纯开发工具向全链路平台延伸。<ul>
-<li><strong>OpenUI</strong> 系统性重构 CLI 与示例，全面对齐 Cloud Embed API，并推进 Vercel 一键部署；</li>
-<li><strong>CopilotKit</strong> 在 v1.70.0 重构了托管 Intelligence 权限体系，规范了 AWS 凭证。</li>
-</ul>
-</li>
-</ul>
-<h2>4. 差异化定位分析</h2>
-<ul>
-<li><strong>a2ui —— 协议与 Schema 驱动的跨端标准制定者</strong>：侧重于底层渲染引擎的灵活性，通过 <code>allowedParents</code> 等层级约束和动态 Catalog schemas 构建 UI 生成协议，目标成为多端一致渲染的底层基座，但对 LLM 评估基准依赖较重。</li>
-<li><strong>OpenUI —— 云优先的开发者体验与平台服务商</strong>：定位正从工具向 PaaS 平台转移，产品矩阵明确划分为 Lang/Gateway/Observability，高度关注 CLI 体验、品牌重塑与云端部署，是典型的自上而下商业化推进模式。</li>
-<li><strong>json-render —— 极简且框架无关的 AI 渲染基座</strong>：坚守底层渲染职责，聚焦于类型安全、流式数据处理及 MCP 协议扩展，追求核心包的极简与按需接入，适合全栈 SSR/Serverless 场景深度定制。</li>
-<li><strong>CopilotKit —— 企业级 Agent 交互与 HITL 基建领跑者</strong>：强依赖 React 生态但正向 V2 和多框架拓展，核心护城河在前端工具与 Agent 运行时的深度绑定，专注解决复杂业务流中的 Human-in-the-loop 痛点及跨渠道富媒体渲染。</li>
-</ul>
-<h2>5. 社区热度与成熟度</h2>
-<ul>
-<li><strong>CopilotKit 社区最为活跃且步入成熟期</strong>：PR 吞吐量大，具备稳定的发版节奏（v1.70.0），社区能精准反馈复杂 Bug（如 Changelog 空白、通配符 HITL 需求），维护者响应迅速，正稳步向 V2 架构过渡。</li>
-<li><strong>a2ui 处于架构演进的高热与阵痛期</strong>：代码提交极度活跃，但大量重构 PR 长期挂起导致合并积压，且主分支 Evals 失败暴露出在 LLM 非确定性环境下的工程稳定性隐患，社区对 DX（样式定制文档）的诉求尚未满足。</li>
-<li><strong>OpenUI 处于核心团队强驱动的快速迭代期</strong>：PR 推进高效但社区声音（Issues）缺失，AI Bot（Devin）参与核心提交，表现出高度的封闭式敏捷开发特征，处于新老架构/品牌更迭的动荡期。</li>
-<li><strong>json-render 处于维护优化的静默期</strong>：核心维护者精力集中于依赖治理与类型修复，社区发声微弱，PR 审查周期过长（长达半年），面临一定程度的社区贡献者流失风险。</li>
-</ul>
-<h2>6. 值得关注的趋势信号</h2>
-<ol>
-<li><strong>LLM Evals 成为 CI/CD 新瓶颈</strong>：a2ui 主分支因 Gemini 模型评估失败导致阻塞，提示生成式 UI 项目在引入 LLM 作为评估基准时，必须建立对抗模型输出不确定性的容错与重试机制。</li>
-<li><strong>Peer Dependency 将成 AI 前端库标配</strong>：json-render 处理 Zod 双实例的做法揭示了一个行业痛点：在 RAG/Agent 复杂依赖树中，类型校验库极易冲突。未来核心 AI UI 库将普遍剥离公用依赖，倒逼开发者显式管理。</li>
-<li><strong>前端工具正成为 Agent 的“外感官”</strong>：CopilotKit 修复前端工具静默丢弃的严重 Bug 证明，Agent 调用前端组件获取上下文（如读取屏幕状态）已从噱头变为刚需，HITL 的颗粒度正在从“文本确认”细化为“UI 动作捕获”。</li>
-<li><strong>云端托管与本地渲染的边界正在模糊</strong>：OpenUI 的 Cloud Embed API 与 CopilotKit 的托管 Intelligence 表明，生成式 UI 的未来形态将是“云端调度/鉴权/推理 + 端侧轻量渲染”的混合架构，开发者需提前设计适配 Serverless 与 SSR 的无状态渲染组件。</li>
-</ol>
-<hr>
-<h2>各项目详细报告</h2>
-<details>
-<summary><strong>a2ui</strong> — <a href="https://github.com/a2ui-project/a2ui">a2ui-project/a2ui</a></summary>
-
-<h1>a2ui 项目动态日报 (2026-09-01)</h1>
-<h2>1. 今日速览</h2>
-<p>a2ui 项目在过去 24 小时内保持高度活跃，共处理 PR 更新 44 条（其中 16 条已合并/关闭，28 条待合并），Issues 活跃 6 条（0 条关闭）。项目当前正处于<strong>跨框架 Web Components 生态深度整合</strong>与<strong>发布流水线自动化</strong>的双重攻坚期，核心开发者正将大量精力投入于将 Lit 组件向 <code>web_core</code> 抽取及 Angular/React 通用渲染的适配中。此外，主分支出现了两次 Evals 评估失败，稳定性监控需引起重视。整体来看，项目架构演进势头强劲，但未闭环的重大重构 PR 带来了一定的合并积压压力。</p>
-<h2>2. 版本发布</h2>
-<p>今日无新版本发布。但值得注意的是，PR <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2451">#2451</a> 已关闭，完成了 Web SDK 多个包的版本号 bump 及 CHANGELOG 更新（如 <code>@a2ui/web_core</code> 0.10.6 -&gt; 0.10.7，<code>@a2ui/lit</code> 0.10.3 -&gt; 0.10.4），预计近期即将正式发版。</p>
-<h2>3. 项目进展</h2>
-<p>今日合并/关闭的关键 PR 推动了项目在架构解耦和工程化上的重要迈进：</p>
-<ul>
-<li><strong>Web Components Light DOM 迁移落地</strong>：<a href="https://redirect.github.com/a2ui-project/a2ui/pull/2204">#2204</a> 已关闭，成功将 <code>@a2ui/lit</code> Basic Catalog 组件从 Shadow DOM 迁移至 Light DOM，彻底扫清了跨框架互操作性的封装阻碍。</li>
-<li><strong>Schema 动态能力与目录约束增强</strong>：<a href="https://redirect.github.com/a2ui-project/a2ui/pull/2459">#2459</a> 已关闭，为 <code>web_core</code> 引入了组件层级约束（<code>allowedParents</code>/<code>allowedChildren</code>）及动态 Catalog schemas，大幅提升了渲染引擎的灵活性。</li>
-<li><strong>Python SDK 类型系统现代化</strong>：<a href="https://redirect.github.com/a2ui-project/a2ui/pull/2462">#2462</a> 已关闭，将 <code>a2ui_core</code> 和 <code>a2ui_agent</code> 的类型注解全面升级以符合内部 Python 风格指南，提升了代码规范性与 IDE 支持。</li>
-<li><strong>Web SDK 发版准备就绪</strong>：<a href="https://redirect.github.com/a2ui-project/a2ui/pull/2451">#2451</a> 已关闭，为最新一期的 Web 端多框架包发布做好了收尾工作。</li>
-</ul>
-<h2>4. 社区热点</h2>
-<p>由于今日数据中具体评论数未详细展示，基于 PR/Issue 的影响力和架构跨度，今日核心热点如下：</p>
-<ul>
-<li><strong>跨框架 Universal Components 实装潮</strong>：由 josemontespg 主导的跨框架通用组件支持矩阵（Angular <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2273">#2273</a>、React <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2283">#2283</a>、Lit 对齐 Angular 行为 <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2205">#2205</a>）构成了当前最庞大的活跃代码区，反映出社区和核心团队在“一次定义，多端一致渲染”上的极高投入度。</li>
-<li><strong>自动化发布流水线重构</strong>：jacobsimionato 提交的 <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2468">#2468</a> 和 <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2450">#2450</a> 旨在建立基于 Tag 的多语言自动化发版系统与 2 层状态机发布管道，这是解决当前多 SDK 协同发版痛点的关键基建。</li>
-</ul>
-<h2>5. Bug 与稳定性</h2>
-<ul>
-<li><strong>[高] 主分支 Evals 连续失败</strong>：github-actions 机器人报出两次主分支评估失败：<a href="https://redirect.github.com/a2ui-project/a2ui/issues/2465">#2465</a>（关联 PR #2452）和 <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2453">#2453</a>（关联 PR #2419）。两者均在 <code>google/gemini-3.5-flash</code> 模型上失败，目前均处于 <code>needs-triage</code> 状态，<strong>暂无修复 PR</strong>。需警惕 LLM 评估基准的稳定性对主分支合并的阻塞风险。</li>
-<li><strong>[中] CI/CD 格式化检查异常</strong>：<a href="https://redirect.github.com/a2ui-project/a2ui/issues/2463">#2463</a> 指出 <code>dart format</code> 在 CI 中可能未能正确解析包路径（Package resolution error），影响 Dart 代码的格式化校验。</li>
-</ul>
-<h2>6. 功能请求与路线图信号</h2>
-<ul>
-<li><strong>Dart/Flutter 生态补全</strong>：Issue <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2356">#2356</a> (P1) 提出实现 Dart A2UI agent SDK 库，目前已有前置 PR <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2439">#2439</a> 在推进核心扩展，结合正在进行的 Flutter quickstart <a href="https://redirect.github.com/a2ui-project/a2ui/pull/1935">#1935</a>，<strong>向移动端拓展是明确的下一版本路线图信号</strong>。</li>
-<li><strong>协议版本解耦</strong>：PR <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2466">#2466</a> 提出使 Catalog 定义与协议版本完全无关，这是为 v1.0 协议演进铺路的核心重构，极可能被近期纳入主分支。</li>
-<li><strong>Schema 基建强化</strong>：Issue <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2443">#2443</a> 请求提取共享的 Zod schema 内省工具；PR <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2464">#2464</a> 推进 <code>unevaluatedProperties: false</code> 及 conformance tests，表明项目正在收紧对 JSON Schema 校验的严格控制。</li>
-</ul>
-<h2>7. 用户反馈摘要</h2>
-<ul>
-<li><strong>样式定制化痛点</strong>：Issue <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2461">#2461</a> 反映，开发者在使用组件库时，难以发现哪些 CSS 变量是可覆盖的，急需 JSDoc 文档支持。这暴露出跨框架组件库在“开发者体验(DX)”和样式 API 文档上的缺失。</li>
-<li><strong>Dart 开发者呼声</strong>：从 <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2356">#2356</a> 及 Flutter Quickstart 的推进来看，非 Web 端开发者对 A2UI 接入有着明确且迫切的需求，当前 Web 偏重的生态已无法满足这部分群体的使用场景。</li>
-</ul>
-<h2>8. 待处理积压</h2>
-<ul>
-<li><strong>P1 级别 Dart SDK 进度滞后</strong>：Issue <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2356">#2356</a> 创建于 8 月 20 日，当前仍为 Open，其前置 PR <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2439">#2439</a> 也尚未合并，整体推进缓慢，需维护者重点关注。</li>
-<li><strong>跨框架重构群 PR 长期挂起</strong>：由 josemontespg 发起的大规模重构（<a href="https://redirect.github.com/a2ui-project/a2ui/pull/2190">#2190</a>、<a href="https://redirect.github.com/a2ui-project/a2ui/pull/2205">#2205</a>、<a href="https://redirect.github.com/a2ui-project/a2ui/pull/2313">#2313</a> 等）已持续近一个月，存在较强相互依赖，长期不合并易引发严重冲突，建议统筹排期 Review。</li>
-<li><strong>Evals 失败急需分派</strong>：<a href="https://redirect.github.com/a2ui-project/a2ui/issues/2465">#2465</a> 和 <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2453">#2453</a> 均处于 <code>needs-triage</code> 状态，主分支 CI 不通过将严重阻碍后续 PR 合并，提醒维护者优先介入排查。</li>
-</ul>
-</details>
-
-<details>
-<summary><strong>OpenUI</strong> — <a href="https://github.com/thesysdev/openui">thesysdev/openui</a></summary>
-
-<h1>OpenUI 项目动态日报 (2026-09-01)</h1>
-<h2>1. 今日速览</h2>
-<p>过去 24 小时，OpenUI 项目呈现出“PR 驱动、高度活跃”的特征，共有 15 个 PR 发生状态更新，但 Issues 板块无新增或关闭动态。项目当前处于密集的生态整合与品牌重构期，核心开发者 AbhinRustagi 与 Devin AI 协作，正全面推进官方示例向 OpenUI Cloud 的迁移，并处理旧版 C1 文档的重定向体验。整体来看，项目在工程推进上极为高效，但社区侧的用户声音（Issues）今日相对沉寂。</p>
-<h2>2. 版本发布</h2>
-<p>无新版本发布。</p>
-<h2>3. 项目进展</h2>
-<p>今日共有 8 个 PR 被合并或关闭，项目在云服务集成、CLI 工具链优化及文档迁移上取得了实质性进展：</p>
-<ul>
-<li><strong>示例项目向 Cloud 迁移（首批）</strong>：<a href="https://redirect.github.com/thesysdev/openui/pull/1106">#1106</a> 完成了设计系统（shadcn/ui, Material UI）示例的 Cloud Responses 适配，并在 Cloud CLI 模板中禁用了 Turbopack minify 以确保 <code>@openuidev/thesys</code> SSR 正常运行；<a href="https://redirect.github.com/thesysdev/openui/pull/1099">#1099</a> 作为总体更新也被合并。</li>
-<li><strong>CLI 工具链增强</strong>：<a href="https://redirect.github.com/thesysdev/openui/pull/1092">#1092</a> 为 CLI 添加了静默安装、全局 Spinner 以及 thesys next.config 的 workaround，显著优化了创建项目时的终端体验；<a href="https://redirect.github.com/thesysdev/openui/pull/1096">#1096</a> 在 CLI 模板中将 langgraph server 替换为了 langgraph library；<a href="https://redirect.github.com/thesysdev/openui/pull/1084">#1084</a> 增加了 Vercel Eve 后端框架选项。</li>
-<li><strong>品牌与文档整合</strong>：针对旧版 C1 文档重定向体验，<a href="https://redirect.github.com/thesysdev/openui/pull/1108">#1108</a> 增加了重定向提示逻辑，<a href="https://redirect.github.com/thesysdev/openui/pull/1110">#1110</a> 由 Devin AI 完成了提示框的文案优化，明确了 &quot;OpenUI Cloud&quot; 与 &quot;C1 by Thesys&quot; 的主次 CTA 关系。</li>
-<li><strong>构建修复</strong>：<a href="https://redirect.github.com/thesysdev/openui/pull/1111">#1111</a> 修复了构建错误，为 examples 补充了 <code>pnpm-lock.yaml</code> 并更新了 templates 依赖。</li>
-</ul>
-<h2>4. 社区热点</h2>
-<p>今日由于 0 条 Issue 更新，且所有 PR 均无评论数（undefined/0）与点赞数，社区讨论热度在数据层面处于低谷。但从提交动态可观察出：</p>
-<ul>
-<li><strong>AI Bot 协作成常态</strong>：Devin AI（<a href="https://redirect.github.com/thesysdev/openui/pull/1110">devin-ai-integration[bot]</a>）独立承担了文档重定向模态框的文案修改与合并，表明项目维护者已将 AI Agent 纳入标准提交流程。</li>
-<li><strong>外部贡献者参与核心重构</strong>：贡献者 pd-builds 提交了首页重构 PR <a href="https://redirect.github.com/thesysdev/openui/pull/1095">#1095</a>，围绕 OpenUI 三大核心产品重构页面，虽然目前标记为 WIP（待其他人接手），但指明了官网演进的下一步方向。</li>
-</ul>
-<h2>5. Bug 与稳定性</h2>
-<ul>
-<li><strong>构建与依赖错误</strong>：由于示例项目与模板的依赖管理脱节，导致出现构建失败。已通过 <a href="https://redirect.github.com/thesysdev/openui/pull/1111">#1111</a> 修复并关闭，补充了缺失的 lock 文件并升级了依赖。</li>
-<li><strong>SSR 打包兼容性问题</strong>：在向 OpenUI Cloud 迁移过程中，发现 Turbopack 的代码压缩会破坏 <code>@openuidev/thesys</code> 的服务端渲染（SSR）。维护者在 <a href="https://redirect.github.com/thesysdev/openui/pull/1106">#1106</a> 中通过临时禁用 Turbopack minify 绕过了此问题，稳定性隐患仍需后续排查。</li>
-</ul>
-<h2>6. 功能请求与路线图信号</h2>
-<p>尽管今日无直接的用户功能请求 Issue，但通过当前待合并的 Open PRs，可以明确读取到项目的近期路线图信号：</p>
-<ul>
-<li><strong>一键部署即将上线</strong>：<a href="https://redirect.github.com/thesysdev/openui/pull/1093">#1093</a> 正在添加 <code>openui deploy</code> 命令，支持 Vercel 的一键登录、链接及部署，并支持 <code>.env</code> 环境变量同步。这标志着 OpenUI 正从单纯的开发工具向全链路部署平台延伸。</li>
-<li><strong>彻底拥抱 Cloud 架构</strong>：<a href="https://redirect.github.com/thesysdev/openui/pull/1103">#1103</a>、<a href="https://redirect.github.com/thesysdev/openui/pull/1104">#1104</a>、<a href="https://redirect.github.com/thesysdev/openui/pull/1105">#1105</a>、<a href="https://redirect.github.com/thesysdev/openui/pull/1107">#1107</a> 四个 PR 正在对齐 Agent 框架、App 框架、杂项及 Harness 示例的 Cloud Embed API。项目正在系统性地剥离本地/旧版依赖，全面转向 Cloud 优先。</li>
-<li><strong>产品线重新定位</strong>：从 <a href="https://redirect.github.com/thesysdev/openui/pull/1095">#1095</a> 和 C1 重定向 PR 可以看出，OpenUI 的产品矩阵已明确划分为 <strong>Lang、Gateway、Observability</strong> 三大板块，且正在与旧品牌 &quot;C1&quot; 进行切割。</li>
-</ul>
-<h2>7. 用户反馈摘要</h2>
-<p>由于今日无新增 Issue，直接用户反馈缺失。但从维护者针对 C1 文档归档所做的一系列操作（<a href="https://redirect.github.com/thesysdev/openui/pull/1108">#1108</a>, <a href="https://redirect.github.com/thesysdev/openui/pull/1110">#1110</a>）可以推断：</p>
-<ul>
-<li><strong>旧用户迷路痛点</strong>：C1 时代的旧用户访问 <code>docs.thesys.dev</code> 时被静默重定向到了陌生的新站点，产生了认知混淆。维护者敏锐捕捉到了这一痛点，通过增加 <code>?from=c1</code> 标识和重定向弹窗，安抚旧用户并指引其前往归档文档。这反映出项目在重大品牌/架构更迭期，对存量用户体验的呵护。</li>
-</ul>
-<h2>8. 待处理积压</h2>
-<p>当前有 7 个处于 OPEN 状态的 PR，形成了明显的开发积压，需维护者尽快 Review 与合并，以解除相互之间的依赖阻塞：</p>
-<ul>
-<li><strong>关键路径阻塞</strong>：<a href="https://redirect.github.com/thesysdev/openui/pull/1093">#1093</a> (openui deploy for Vercel) 依赖前置的 UX/先决条件 PR，已开启 5 天，是后续部署功能上线的瓶颈。</li>
-<li><strong>大批量示例迁移待合入</strong>：<a href="https://redirect.github.com/thesysdev/openui/pull/1103">#1103</a>、<a href="https://redirect.github.com/thesysdev/openui/pull/1104">#1104</a>、<a href="https://redirect.github.com/thesysdev/openui/pull/1105">#1105</a>、<a href="https://redirect.github.com/thesysdev/openui/pull/1107">#1107</a> 这四个 PR 覆盖了几乎所有的主流框架，同属一个工作流，建议进行批量合入测试。</li>
-<li><strong>官网重构停滞风险</strong>：<a href="https://redirect.github.com/thesysdev/openui/pull/1095">#1095</a> (首页重构) 由于贡献者 pd-builds 标记为 WIP 并希望他人接手，若无核心维护者介入，可能面临烂尾风险。</li>
-<li><strong>辅助工具待审</strong>：<a href="https://redirect.github.com/thesysdev/openui/pull/1109">#1109</a> (sparse checkout helpers) 描述为空，需原作者或维护者补充上下文后推进。</li>
-</ul>
-</details>
-
-<details>
-<summary><strong>json-render</strong> — <a href="https://github.com/vercel-labs/json-render">vercel-labs/json-render</a></summary>
-
-<h1>json-render 项目动态日报 (2026-09-01)</h1>
-<h2>1. 今日速览</h2>
-<p>2026年9月1日，json-render 项目整体处于版本迭代的收尾与发布准备阶段。过去24小时内项目无新增 Issue，但集中关闭了 5 个历史 PR，并有 1 个新 PR 待处理。核心维护者 ctate 重点推进了依赖治理、构建修复及框架升级等底层维护工作；其中版本发布准备 PR (#305) 的关闭，标志着 v0.19.1 版本已进入正式发布的倒计时。项目当前代码库健康度良好，核心模块稳定性持续提升，但社区交互热度今日相对平缓。</p>
-<h2>2. 版本发布</h2>
-<p>今日无新的 GitHub Release 发布。但根据已关闭的 <a href="https://redirect.github.com/vercel-labs/json-render/pull/305">PR #305</a> 判断，<strong>v0.19.1 已处于待发布状态</strong>。</p>
-<ul>
-<li><strong>预期更新内容</strong>：zod 4.4+ 兼容性优化（仅作为 peer dependency）、<code>visible</code> 验证相关更新、Buffer/stream 构建类型错误修复，以及 Next.js 16.2 的全面升级。</li>
-<li><strong>迁移注意事项</strong>：由于 <code>@json-render/core</code> 和 <code>@json-render/shadcn-svelte</code> 将 <code>zod</code> 从 <code>dependencies</code> 转移至 <code>peerDependencies</code>，升级至 v0.19.1 后，开发者需确保自身项目中显式安装了 <code>zod@^4.0.0</code>，否则可能会遇到依赖缺失报错。</li>
-</ul>
-<h2>3. 项目进展</h2>
-<p>今日合并/关闭的 PR 集中解决了依赖冲突与构建阻断问题，项目整体稳定性向前迈进了一大步：</p>
-<ul>
-<li><a href="https://redirect.github.com/vercel-labs/json-render/pull/305">PR #305</a> [CLOSED]: 完成 v0.19.1 的发布准备工作，包括全量包版本号提升及更新日志编写，为新一波补丁发布铺平道路。</li>
-<li><a href="https://redirect.github.com/vercel-labs/json-render/pull/303">PR #303</a> [CLOSED]: 修复核心库与 Svelte 组件库中 <code>zod</code> 依赖重复安装的问题，将其改为 peer-only dependency，彻底解决了包管理器（如 lockfile 锁定 4.3.x 时）解析出双份 zod 实例引发的运行时冲突。</li>
-<li><a href="https://redirect.github.com/vercel-labs/json-render/pull/304">PR #304</a> [CLOSED]: 修复 <code>@json-render/image</code> 和 <code>@json-render/react-pdf</code> 中 <code>Buffer</code> 与 <code>Uint8Array</code> 类型不兼容导致的构建崩溃问题，恢复了关键渲染组件的构建能力。</li>
-<li><a href="https://redirect.github.com/vercel-labs/json-render/pull/233">PR #233</a> [CLOSED]: 将 monorepo 内所有 apps 和 examples 中的 Next.js 统一升级至 16.2.0，消除多版本碎片化，保持生态依赖一致性。</li>
-<li><a href="https://redirect.github.com/vercel-labs/json-render/pull/191">PR #191</a> [CLOSED]: 为 MCP (Model Context Protocol) 引入 Svelte 和 Vue 客户端支持，进一步拓宽了项目在 AI 智能体多框架接入方面的适用边界。</li>
-</ul>
-<h2>4. 社区热点</h2>
-<p>过去24小时内，项目没有出现评论激增或反应数极高的 Issue 或 PR，整体社区讨论热度偏低。唯一的增量动态来自外部贡献者提交的 <a href="https://redirect.github.com/vercel-labs/json-render/pull/333">PR #333</a>，这反映了社区中采用 TypeScript 严格模式的开发者在接入 json-render devtools 时遇到了阻碍，其诉求主要在于提升类型声明的严谨性与开箱即用的体验。</p>
-<h2>5. Bug 与稳定性</h2>
-<p>今日报告及处理的 Bug 主要围绕类型安全与依赖解析，按严重程度排列如下：</p>
-<ul>
-<li><strong>严重（构建阻断）</strong>：<code>@json-render/image</code> 和 <code>@json-render/react-pdf</code> 存在 Buffer/stream 类型错误导致 <code>build</code> 和 <code>check-types</code> 阶段直接失败。<strong>已有修复并关闭</strong>：<a href="https://redirect.github.com/vercel-labs/json-render/pull/304">PR #304</a>。</li>
-<li><strong>中等（依赖冲突/运行时隐患）</strong>：<code>@json-render/core</code> 和 <code>@json-render/shadcn-svelte</code> 因 <code>zod</code> 同时存在于 <code>dependencies</code> 和 <code>peerDependencies</code>，导致可能引入双份 zod 实例，引发潜在的上下文不兼容问题。<strong>已有修复并关闭</strong>：<a href="https://redirect.github.com/vercel-labs/json-render/pull/303">PR #303</a>。</li>
-<li><strong>低（开发时类型检查）</strong>：内部 devtools 包在 TS 严格模式下存在 <code>TS7006</code> 隐式 any 类型报错，影响开发体验。<strong>已有修复 PR 提交待审核</strong>：<a href="https://redirect.github.com/vercel-labs/json-render/pull/333">PR #333</a>。</li>
-</ul>
-<h2>6. 功能请求与路线图信号</h2>
-<p>今日无显式的新功能请求 Issue，但从已关闭的 PR 动态中可以提取明确的路线图信号：</p>
-<ul>
-<li><strong>MCP 多框架支持</strong>：<a href="https://redirect.github.com/vercel-labs/json-render/pull/191">PR #191</a> 的落地表明，项目正在积极拥抱 AI 智能体生态，将 MCP (Model Context Protocol) 视为重要集成方向。为 Svelte/Vue 提供 MCP 客户端，意味着 json-render 致力于成为跨框架的 AI 渲染基座。</li>
-<li><strong>依赖轻量化</strong>：<a href="https://redirect.github.com/vercel-labs/json-render/pull/303">PR #303</a> 剥离核心包的硬性 <code>zod</code> 依赖，释放出项目追求&quot;核心极简、按需接入&quot;的架构演进信号。</li>
-</ul>
-<h2>7. 用户反馈摘要</h2>
-<p>今日无新增 Issue 和评论数据，无法直接提炼用户的即时情绪反馈。但从近期修复的 Bug 可以侧面推断出当前用户的隐性痛点：</p>
-<ul>
-<li><strong>包管理器兼容性痛点</strong>：在使用 pnpm 等对依赖树严格的包管理器时，用户极易遭遇 zod 多实例实例化问题，这在 AI 应用复杂依赖树中尤为棘手。</li>
-<li><strong>Node 环境与 TS 类型脱节</strong>：用户在 Node.js 环境下使用 PDF 和 Image 渲染组件时，遇到了底层 Buffer 类型与前端 TS 标准库定义不一致的痛点，说明部分用户正在全栈（SSR/Serverless）场景中重度使用这些渲染组件。</li>
-</ul>
-<h2>8. 待处理积压</h2>
-<ul>
-<li><a href="https://redirect.github.com/vercel-labs/json-render/pull/333">PR #333</a> [OPEN]: 由社区贡献者 vedanshshetti 于昨日提交的 devtools TS 严格模式修复，目前尚无核心维护者审查。建议及时跟进 Review，以修复 TS 严格模式下的阻断问题并保持社区贡献者的积极性。</li>
-<li><strong>历史 PR 处理节奏预警</strong>：今日关闭的 PR 中，最早创建于 2026-03 月（如 #191, #233），存在长达半年的处理周期。建议维护者在 v0.19.1 发布后，适当调整 PR Review 节奏，避免长期积压导致社区贡献者流失或代码冲突加剧。</li>
-</ul>
-</details>
-
-<details>
-<summary><strong>CopilotKit</strong> — <a href="https://github.com/CopilotKit/CopilotKit">CopilotKit/CopilotKit</a></summary>
-
-<h1>CopilotKit 项目动态日报 - 2026年09月01日</h1>
-<h2>1. 今日速览</h2>
-<p>CopilotKit 今日保持高度活跃，成功发布了 <code>v1.70.0</code> 新版本，标志着项目在托管基础设施与核心稳定性上的重要演进。过去24小时内，PR 合并/关闭数量达 36 条，Issues 关闭 3 条，开源社区与核心团队的交付节奏稳健。今日核心亮点集中在<strong>前端工具注册机制的关键修复</strong>、<strong>Intelligence 托管服务权限体系的大规模重构落地</strong>，以及<strong>向 Vue 生态与 V2 架构的持续拓展</strong>。整体来看，项目正处于从功能累积向企业级稳定性与多端架构迈进的健康发展阶段。</p>
-<h2>2. 版本发布</h2>
-<ul>
-<li><strong>v1.70.0 正式发布</strong> (<a href="https://github.com/CopilotKit/CopilotKit/releases/">Release v1.70.0</a>)<ul>
-<li><strong>核心更新</strong>：本次发版主要承载了托管 Intelligence 权限体系的重构（对应 PR #6098, #6188），引入了 <code>CPK_INTELLIGENCE_API_KEY</code> 替代原有的 License 机制；同时修复合并了影响前端工具稳定性的关键缺陷（对应 PR #6524, #6794）。</li>
-<li><strong>破坏性变更/迁移注意</strong>：对于使用 AgentCore 托管服务的用户，需注意配置项从 <code>COPILOTKIT_LICENSE_TOKEN</code> 迁移至 <code>CPK_INTELLIGENCE_API_KEY</code>，AWS Secrets Manager 中的密钥结构也已同步调整。纯前端应用需确认不依赖旧版 License 校验逻辑。</li>
-</ul>
-</li>
-</ul>
-<h2>3. 项目进展</h2>
-<p>今日合并/关闭的关键 PR 极大地推进了项目的基础设施与稳定性：</p>
-<ul>
-<li><strong>托管 Intelligence 体系重构落地</strong>：<a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6098">#6098</a> 与 <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6188">#6188</a> 成功合并，完整引入了托管 Intelligence 权限与遥测 ID 支持，规范了 AWS 托管环境下的凭证体系。配套的 Lambda 依赖去重 <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6813">#6813</a> 与版本重置 <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6811">#6811</a> 也已合入，为 v1.70.0 铺平道路。</li>
-<li><strong>前端工具注册与 Catch-all 机制修复</strong>：<a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6524">#6524</a> 与 <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6794">#6794</a> 合并，从根本上解决了 <code>useFrontendTool</code> 在启用 <code>openGenerativeUI</code> 时被静默丢弃的严重问题，并让通配符 <code>*</code> 捕获的动作能正确等待响应。</li>
-<li><strong>Slack 频道灾难性循环修复</strong>：<a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6717">#6717</a> 修复了 Slack 频道中因未改变文本的修订事件触发机器人无限回复的致命 Bug。</li>
-</ul>
-<h2>4. 社区热点</h2>
-<ul>
-<li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/6798">#6798</a> [Bug] Changelog 经常为空</strong>：由社区开发者今日提出，直指当前发版流程中 AI 生成的 Changelog 不稳定、常为空白的痛点。这反映了用户对版本可观测性的强烈需求，期待维护团队优化自动化发布流。</li>
-<li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/4952">#4952</a> [Bug] useFrontendTool 工具静默丢弃</strong>：该高优 Bug 今日随 PR #6524 的合并正式关闭。背后折射出社区在构建复杂 HITL（Human-in-the-loop）交互时，对前端工具与 Generative UI 协同工作的强依赖，此修复将极大提升前端开发体验。</li>
-</ul>
-<h2>5. Bug 与稳定性</h2>
-<p>按严重程度排列今日处理/发现的 Bug：</p>
-<ol>
-<li><strong>🔴 严重 - Slack 频道机器人消息死循环</strong> (<a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6717">#6717</a>)：8秒内产生50条重复回复。<strong>已修复合入</strong>。</li>
-<li><strong>🔴 严重 - 前端工具在特定运行时配置下静默失效</strong> (<a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/4952">#4952</a>)：导致 Agent 丢失关键用户侧能力。<strong>已由 PR #6524 与 #6794 修复并合入 v1.70.0</strong>。</li>
-<li><strong>🟡 中等 - 托管环境 Lambda 包依赖冲突</strong> (<a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6813">#6813</a>)：Lambda lock 中存在重复的 <code>@copilotkit/shared</code>。<strong>已修复合入</strong>。</li>
-<li><strong>🟢 低 - 发布日志缺失</strong> (<a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/6798">#6798</a>)：影响版本追踪与升级评估。<strong>状态：Open，暂无修复 PR</strong>。</li>
-</ol>
-<h2>6. 功能请求与路线图信号</h2>
-<ul>
-<li><strong>Vue 生态支持</strong>：<a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6222">#6222</a>（Open）正尝试添加 Vue 3/Vite 的 Agentic Chat Showcase。这释放出 CopilotKit 计划突破 React 单一生态、向更广泛前端框架延伸的信号。</li>
-<li><strong>富媒体通道渲染</strong>：<a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6146">#6146</a>（Open）支持通过 Takumi 将任意 JSX 渲染为 PNG 发送至频道。表明项目在提升跨平台 Channel 消息表现力上持续加码。</li>
-<li><strong>向 V2 架构迁移</strong>：<a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6808">#6808</a>（Open）正在将官方示例全面迁移至 React 和 Runtime v2 API。结合 v1.70.0 的发布，<strong>V2 大概率将在下个版本成为默认主推架构</strong>。</li>
-</ul>
-<h2>7. 用户反馈摘要</h2>
-<ul>
-<li><strong>痛点：复杂动作的 HITL 流程繁琐</strong>：Issue <a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/1746">#1746</a> 反映用户在面对大量工具时，不想逐个写 <code>useCopilotAction</code>，期望用通配符统一拦截处理。随 PR #6524 的修复合入，该诉求已得到满足。</li>
-<li><strong>痛点：跨会话记忆成本高</strong>：Issue <a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/6480">#6480</a> 提出当前 Agent 跨会话记忆缺失或 Token 消耗巨大。虽然该 Proposal 被关闭，但“低成本长期记忆”仍是企业级 Agent 落地的核心刚需。</li>
-<li><strong>痛点：文档与示例版本滞后</strong>：用户常因示例基于旧版 API 而受阻，PR <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6808">#6808</a> 的推进正是对这一反馈的响应。</li>
-</ul>
-<h2>8. 待处理积压</h2>
-<ul>
-<li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6808">#6808</a> 官方示例向 V2 移植</strong>：该 PR 包含 5 个核心示例的重构，工作量大且影响深远，目前仍 Open，需要维护者重点推进与 Review，以免新用户在 V1/V2 间困惑。</li>
-<li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6222">#6222</a> Vue Agentic Chat</strong>：作为首个非 React 生态的 PR，已开启近一个月，需要架构层谨慎评估其对 Core 包依赖的解耦设计，建议维持关注度。</li>
-<li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/6798">#6798</a> Changelog 生成机制</strong>：看似微小，但直接影响开源项目的专业度与社区信任，建议在下一个发版周期前调整自动化 Bot 策略。</li>
-</ul>
-</details>
-
-<hr>
-<p><em>本日报由 <a href="https://github.com/linqinghao/agents-radar">agents-radar</a> 自动生成。</em></p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Generative UI Ecosystem Digest 2026-09-01</title>
-      <link>https://duanyytop.github.io/agents-radar/#2026-09-01/ai-genui-en</link>
-      <guid isPermaLink="true">https://duanyytop.github.io/agents-radar/#2026-09-01/ai-genui-en</guid>
-      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Generative UI Ecosystem Digest 2026-09-01 Issues: 11 | PRs: 123 | Projects covered: 4 | Generated: 2026-09-01 04:13 UTC a2ui OpenUI json-render CopilotKit Cross-Ecosystem Comparison Cross-Project Comparison Report: Generative UI Ecosystem (2026-09-01) 1. Ecosystem Overview The generative UI ecosystem is rapidly maturing beyond basic chat wrappers, shifting toward robust, cross-framework, and enterprise-grade agentic workflows. Projects are aggressively addressing framework interoperability, with...</description>
-      <content:encoded><![CDATA[<h1>Generative UI Ecosystem Digest 2026-09-01</h1>
-<blockquote>
-<p>Issues: 11 | PRs: 123 | Projects covered: 4 | Generated: 2026-09-01 04:13 UTC</p>
-</blockquote>
-<ul>
-<li><a href="https://github.com/a2ui-project/a2ui">a2ui</a></li>
-<li><a href="https://github.com/thesysdev/openui">OpenUI</a></li>
-<li><a href="https://github.com/vercel-labs/json-render">json-render</a></li>
-<li><a href="https://github.com/CopilotKit/CopilotKit">CopilotKit</a></li>
-</ul>
-<hr>
-<h2>Cross-Ecosystem Comparison</h2>
-<h2>Cross-Project Comparison Report: Generative UI Ecosystem (2026-09-01)</h2>
-<h3>1. Ecosystem Overview</h3>
-<p>The generative UI ecosystem is rapidly maturing beyond basic chat wrappers, shifting toward robust, cross-framework, and enterprise-grade agentic workflows. Projects are aggressively addressing framework interoperability, with a clear push to decouple UI rendering from React-centric models into universal web standards (Light DOM) or alternative frameworks (Vue, Svelte, Flutter). Simultaneously, there is a strong pivot toward cloud-managed deployments, strict type-safety, and multi-platform rendering (Slack, Teams) to meet enterprise reliability and scale requirements.</p>
-<h3>2. Activity Comparison</h3>
-<table>
-<thead>
-<tr>
-<th align="left">Project</th>
-<th align="left">Issues (New / Closed)</th>
-<th align="left">PRs (Updated / Merged)</th>
-<th align="left">Release Status</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>a2ui</strong></td>
-<td align="left">2 / 0</td>
-<td align="left">44 / 16</td>
-<td align="left">No release (imminent release cycle prep)</td>
-</tr>
-<tr>
-<td align="left"><strong>OpenUI</strong></td>
-<td align="left">0 / 0</td>
-<td align="left">15 / 8</td>
-<td align="left">No release</td>
-</tr>
-<tr>
-<td align="left"><strong>json-render</strong></td>
-<td align="left">0 / 0</td>
-<td align="left">6 / 5</td>
-<td align="left">No release (v0.19.1 imminent)</td>
-</tr>
-<tr>
-<td align="left"><strong>CopilotKit</strong></td>
-<td align="left">5 / 3</td>
-<td align="left">58 / 36</td>
-<td align="left"><strong>v1.70.0 released</strong></td>
-</tr>
-</tbody></table>
-<h3>3. Shared Feature Directions</h3>
-<ul>
-<li><strong>Cross-Framework &amp; Multi-Language Expansion:</strong> Escaping React-only ecosystems is a universal priority.<ul>
-<li><em>a2ui:</em> Migrating to Light DOM to resolve React/Angular interop friction; building Dart/Flutter SDKs.</li>
-<li><em>json-render:</em> Adding Model Context Protocol (MCP) clients for Svelte and Vue.</li>
-<li><em>CopilotKit:</em> Community pushing Vue 3 agentic chat support.</li>
-</ul>
-</li>
-<li><strong>Cloud-First &amp; Streamlined Deployment:</strong> Shifting from self-hosted libraries to managed deployment flows.<ul>
-<li><em>OpenUI:</em> Defaulting examples to Cloud API; adding Vercel CLI deploy commands.</li>
-<li><em>CopilotKit:</em> Integrating AWS Marketplace entitlements and managed &quot;Intelligence&quot; authority.</li>
-</ul>
-</li>
-<li><strong>Strict Typing &amp; Schema Conformance:</strong> Moving from loose data handling to robust type safety.<ul>
-<li><em>a2ui:</em> Enforcing <code>unevaluatedProperties: false</code> and version-agnostic protocol specs.</li>
-<li><em>json-render:</em> Resolving strict TS mode errors and transitioning Zod to peer-only dependencies to prevent duplication.</li>
-</ul>
-</li>
-</ul>
-<h3>4. Differentiation Analysis</h3>
-<ul>
-<li><strong>a2ui</strong> differentiates via <strong>universal web component architecture</strong>. Its core focus is resolving DOM-level interoperability (Shadow vs. Light DOM) and expanding language SDKs (Python, Dart). It targets developers needing framework-agnostic UI component infrastructure.</li>
-<li><strong>OpenUI</strong> focuses on <strong>product consolidation and CLI-driven developer experience</strong>. It is heavily shifting toward a managed SaaS model (OpenUI Cloud), abstracting away backend complexities (Vercel deploys, LangGraph templates) for developers seeking turnkey solutions.</li>
-<li><strong>json-render</strong> prioritizes <strong>monorepo stability and AI protocol interoperability</strong>. It is the most focused on core library hygiene (dependency resolution, TS strict mode) and framework-agnostic AI agent integration via MCP, targeting TypeScript-heavy frontend engineers.</li>
-<li><strong>CopilotKit</strong> targets <strong>enterprise agentic workflows and multi-channel deployment</strong>. It stands out with its focus on Human-in-the-loop (HITL) orchestration, channel integrations (Slack/Teams), and enterprise marketplace integration, aiming at teams building complex, production-grade AI assistants.</li>
-</ul>
-<h3>5. Community Momentum &amp; Maturity</h3>
-<ul>
-<li><strong>CopilotKit</strong> exhibits the highest velocity and maturity, shipping a minor release (v1.70.0) while resolving high-impact community issues (silent tool drops, Slack loops). Its 58 updated PRs demonstrate massive momentum.</li>
-<li><strong>a2ui</strong> is iterating rapidly on architecture (16 merged PRs) but shows signs of growing pains, with P1 evaluation failures on <code>main</code> and stalling PRs (Flutter quickstart open for 2 months).</li>
-<li><strong>OpenUI</strong> shows structured, core-team-driven momentum (supplemented by AI-assisted bots) focused on cloud migration, but currently lacks organic community engagement (0 new issues, 0 comments).</li>
-<li><strong>json-render</strong> is in a disciplined stabilization phase. It has the lowest volume but highly focused PRs aimed at dependency and type-safety hygiene, indicating a mature, maintenance-oriented lifecycle.</li>
-</ul>
-<h3>6. Trend Signals</h3>
-<ul>
-<li><strong>The End of React-Centricity:</strong> Developers demand generative UI outside React. Light DOM migrations (a2ui) and native Vue/Svelte implementations (json-render, CopilotKit) prove that React-shadowed DOMs are a critical bottleneck for AI-driven component injection.</li>
-<li><strong>Silent Failures are Intolerable:</strong> CopilotKit&#39;s community feedback highlights that silent dropping of frontend tools is a massive pain point. As generative UIs handle more critical agentic actions, explicit failures, strict schemas (a2ui), and strict TS conformance (json-render) are becoming industry requirements.</li>
-<li><strong>Agents Need Multi-Platform Interfaces:</strong> LLMs are no longer just rendering web DOMs. The push to render JSX as PNGs for Slack bots (CopilotKit) and expand MCP integrations (json-render) signals that agents are aggressively pushing UI into non-web and conversational channels.</li>
-<li><strong>Deployment DX as a Competitive Moat:</strong> Both OpenUI (Vercel CLI deploys) and CopilotKit (AWS Marketplace) signal that the &quot;last mile&quot; of generative UI—hosting, auth, and entitlements—is becoming a core feature rather than an afterthought.</li>
-</ul>
-<hr>
-<h2>Per-Project Reports</h2>
-<details>
-<summary><strong>a2ui</strong> — <a href="https://github.com/a2ui-project/a2ui">a2ui-project/a2ui</a></summary>
-
-<h1>a2ui Project Digest (2026-09-01)</h1>
-<h2>1. Today&#39;s Overview</h2>
-<p>The a2ui project is experiencing high development activity, particularly in its web rendering ecosystem and multi-language SDK infrastructure. With 44 pull requests updated in the last 24 hours and 16 of those merged or closed, the maintainer team is pushing hard on cross-framework interoperability and release pipeline automation. However, the lack of closed issues alongside two newly opened evaluation failure reports suggests a temporary instability on the <code>main</code> branch. No new version releases were cut today, though preparatory merges indicate an imminent release cycle.</p>
-<h2>2. Releases</h2>
-<p>No new releases were published today.</p>
-<h2>3. Project Progress</h2>
-<p>Significant architectural progress was made today, with 16 PRs merged/closed, advancing several key initiatives:</p>
-<ul>
-<li><strong>Release Pipeline &amp; Versioning:</strong> <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2451">PR #2451</a> prepared Web SDK packages (<code>@a2ui/web_core</code>, <code>@a2ui/lit</code>, etc.) for release by bumping versions and updating changelogs. Additionally, <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2462">PR #2462</a> modernized Python type annotations across <code>a2ui_core</code> and <code>a2ui_agent</code> SDKs.</li>
-<li><strong>Cross-Framework Web Components:</strong> A major milestone was achieved with <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2204">PR #2204</a>, which migrated basic catalog components from Shadow DOM to Light DOM rendering—resolving interop friction with React/Angular. This supports the ongoing efforts to universalize web components (<a href="https://redirect.github.com/a2ui-project/a2ui/pull/2283">PR #2283</a>, <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2273">PR #2273</a>).</li>
-<li><strong>Schema &amp; Catalog Enhancements:</strong> <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2459">PR #2459</a> merged, bringing dynamic catalog schemas, component hierarchy constraints, and capabilities refactoring to <code>web_core</code>.</li>
-</ul>
-<h2>4. Community Hot Topics</h2>
-<p>While explicit comment counts are low today, the most structurally significant discussions revolve around cross-framework rendering and release engineering:</p>
-<ul>
-<li><strong>Universal Web Components vs. Native Implementations:</strong> The ongoing work by <code>josemontespg</code> to move Lit components to <code>web_core</code> (<a href="https://redirect.github.com/a2ui-project/a2ui/pull/2190">PR #2190</a>) and align behaviors across Angular and Lit (<a href="https://redirect.github.com/a2ui-project/a2ui/pull/2205">PR #2205</a>) highlights a community drive to reduce framework-specific rendering silos. The move to Light DOM (<a href="https://redirect.github.com/a2ui-project/a2ui/pull/2204">PR #2204</a>) is a direct response to interop pain points.</li>
-<li><strong>Automated Release Infrastructure:</strong> <code>jacobsimionato</code> has opened substantial PRs for a tag-based multi-language release system (<a href="https://redirect.github.com/a2ui-project/a2ui/pull/2468">PR #2468</a>) and a unified 2-layer publishing pipeline (<a href="https://redirect.github.com/a2ui-project/a2ui/pull/2450">PR #2450</a>), signaling that the project is scaling its DevOps to handle its multi-package architecture.</li>
-</ul>
-<h2>5. Bugs &amp; Stability</h2>
-<p>Stability is currently constrained by evaluation failures on the main branch, which require immediate triage:</p>
-<ul>
-<li><strong>[P1/Critical] Eval Failure on PR #2452:</strong> <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2465">Issue #2465</a> reports an <code>eval_failure</code> on main using the <code>google/gemini-3.5-flash</code> model. No fix PR is currently linked.</li>
-<li><strong>[P1/Critical] Eval Failure on PR #2419:</strong> <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2453">Issue #2453</a> reports a similar <code>eval_failure</code> on main, also involving <code>google/gemini-3.5-flash</code>. No fix PR is currently linked.</li>
-<li><strong>[P2/Medium] CI/CD Dart Format Issue:</strong> <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2463">Issue #2463</a> notes that <code>dart format</code> checks in CI might be failing to resolve package URIs properly, potentially allowing formatting inconsistencies to slip through.</li>
-</ul>
-<h2>6. Feature Requests &amp; Roadmap Signals</h2>
-<ul>
-<li><strong>Dart Agent SDK:</strong> <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2356">Issue #2356</a> (P1) outlines the implementation of a Dart A2UI agent SDK library. With prerequisite <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2439">PR #2439</a> actively extending <code>a2ui_core</code>, expect Dart SDK support to land in the next major version.</li>
-<li><strong>Protocol Version Agnosticism:</strong> <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2466">PR #2466</a> updates the v1.0 protocol spec to make catalog definitions version-agnostic, indicating the roadmap is firmly aimed at v1.0 stability and backward compatibility.</li>
-<li><strong>Strict Schema Conformance:</strong> <a href="https://redirect.github.com/a2ui-project/a2ui/pull/2464">PR #2464</a> introduces <code>unevaluatedProperties: false</code> to enforce strict schema validation, hinting that future versions will prioritize strictness and security over loose data handling.</li>
-</ul>
-<h2>7. User Feedback Summary</h2>
-<ul>
-<li><strong>Developer Ergonomics (Styling):</strong> <a href="https://redirect.github.com/a2ui-project/a2ui/issues/2461">Issue #2461</a> reveals that developers are struggling to override CSS custom properties due to missing JSDoc documentation, showing a need for better styling DX.</li>
-<li><strong>Shadow DOM Friction:</strong> The migration to Light DOM (<a href="https://redirect.github.com/a2ui-project/a2ui/pull/2204">PR #2204</a>) validates user/developer frustration with Shadow DOM&#39;s isolated boundaries when integrating A2UI into existing React or Angular apps.</li>
-<li><strong>Flutter Demand:</strong> The active status of the Flutter quickstart (<a href="https://redirect.github.com/a2ui-project/a2ui/pull/1935">PR #1935</a>) and Dart SDK requests indicate strong user demand for non-web-native mobile support.</li>
-</ul>
-<h2>8. Backlog Watch</h2>
-<ul>
-<li><strong><a href="https://redirect.github.com/a2ui-project/a2ui/issues/2356">Issue #2356</a>:</strong> P1 Implement Dart A2UI agent SDK library. Open since 2026-08-20 with 0 comments recently. Needs continued maintainer momentum to push the prerequisite core extensions over the finish line.</li>
-<li><strong><a href="https://redirect.github.com/a2ui-project/a2ui/pull/2205">PR #2205</a>:</strong> Align basic catalog component behaviors with Angular. Open since 2026-08-07, this is a massive architectural PR that requires dedicated review time to prevent cross-framework drift.</li>
-<li><strong><a href="https://redirect.github.com/a2ui-project/a2ui/pull/1935">PR #1935</a>:</strong> Adding Flutter quickstart. Open since 2026-07-07 (nearly 2 months). This appears stalled and needs maintainer attention to merge or provide actionable feedback.</li>
-</ul>
-</details>
-
-<details>
-<summary><strong>OpenUI</strong> — <a href="https://github.com/thesysdev/openui">thesysdev/openui</a></summary>
-
-<h3>OpenUI Project Digest — 2026-09-01</h3>
-<h4>1. Today&#39;s Overview</h4>
-<p>OpenUI experienced active development on 2026-09-01, driven entirely by pull request activity with 15 PRs updated (7 open, 8 closed/merged) and zero new issues. The core team and contributors are heavily focused on ecosystem consolidation, specifically migrating various framework and design system examples to the OpenUI Cloud API. Additionally, significant CLI enhancements and documentation updates for the transition from legacy C1 docs indicate a strategic shift towards streamlining the OpenUI Cloud product experience. The lack of new issues suggests a stable codebase currently, though it also indicates low community issue-filing activity for this period.</p>
-<h4>2. Releases</h4>
-<p>No new releases were published today.</p>
-<h4>3. Project Progress</h4>
-<p>Merged/closed PRs today advanced cloud integration, CLI UX, and documentation:</p>
-<ul>
-<li><strong>Cloud Migration &amp; Examples:</strong> Successfully merged PRs transitioning examples to OpenUI Cloud, including design-system examples (<a href="https://redirect.github.com/thesysdev/openui/pull/1106">#1106</a>) and a general update for examples (<a href="https://redirect.github.com/thesysdev/openui/pull/1099">#1099</a>).</li>
-<li><strong>CLI Enhancements:</strong> Merged UX improvements for the CLI, including quiet installs and spinner UI (<a href="https://redirect.github.com/thesysdev/openui/pull/1092">#1092</a>), and added the Vercel Eve Backend to CLI templates (<a href="https://redirect.github.com/thesysdev/openui/pull/1084">#1084</a>). Also merged a fix replacing LangGraph server with the LangGraph library in the CLI template (<a href="https://redirect.github.com/thesysdev/openui/pull/1096">#1096</a>).</li>
-<li><strong>Documentation &amp; Redirects:</strong> Merged changes handling the redirect from legacy C1 docs to the new OpenUI docs (<a href="https://redirect.github.com/thesysdev/openui/pull/1108">#1108</a>) and updated the copy in the redirect modal (<a href="https://redirect.github.com/thesysdev/openui/pull/1110">#1110</a>).</li>
-<li><strong>Bug Fixes:</strong> Resolved build errors related to lockfiles and dependencies (<a href="https://redirect.github.com/thesysdev/openui/pull/1111">#1111</a>).</li>
-</ul>
-<h4>4. Community Hot Topics</h4>
-<p>Activity today was predominantly driven by core maintainers (AbhinRustagi, abhithesys) and AI-assisted workflows (devin-ai-integration[bot]), with minimal community engagement metrics (0 comments/reactions on all items). The most notable community-facing PR is <a href="https://redirect.github.com/thesysdev/openui/pull/1095">#1095</a> by contributor <code>pd-builds</code>, which proposes restructuring the home page around the three OpenUI products. Although currently a work-in-progress, it signals active community interest in product positioning and site architecture. </p>
-<h4>5. Bugs &amp; Stability</h4>
-<p>A build stability issue was identified and swiftly resolved today:</p>
-<ul>
-<li><strong>Medium - Dependency/Lockfile Build Errors:</strong> Missing or outdated lockfiles in examples and templates caused build failures. Addressed and closed in <a href="https://redirect.github.com/thesysdev/openui/pull/1111">PR #1111</a>, which added <code>pnpm-lock.yaml</code> for examples and updated <code>package-lock.json</code> via <code>npm update --save</code>.</li>
-<li><strong>Low - Next.js SSR Minification Issue:</strong> Turbopack minify was breaking <code>@openuidev/thesys</code> SSR in the Cloud CLI template. A workaround was merged in <a href="https://redirect.github.com/thesysdev/openui/pull/1092">PR #1092</a> to skip Turbopack minify.</li>
-</ul>
-<h4>6. Feature Requests &amp; Roadmap Signals</h4>
-<p>Current open PRs strongly signal the project&#39;s near-term roadmap:</p>
-<ul>
-<li><strong>CLI Deploy Command:</strong> <a href="https://redirect.github.com/thesysdev/openui/pull/1093">PR #1093</a> introduces <code>openui deploy</code> for Vercel, featuring login, linking, env syncing, and quiet builds. This signals a push towards seamless, one-click deployment workflows directly from the CLI.</li>
-<li><strong>Cloud-First Default:</strong> The open PRs migrating agent-framework (<a href="https://redirect.github.com/thesysdev/openui/pull/1103">#1103</a>), app-framework (<a href="https://redirect.github.com/thesysdev/openui/pull/1104">#1104</a>), harness (<a href="https://redirect.github.com/thesysdev/openui/pull/1107">#1107</a>), and miscellaneous examples (<a href="https://redirect.github.com/thesysdev/openui/pull/1105">#1105</a>) indicate the next release will default all scaffolding and examples to the OpenUI Cloud embed API.</li>
-<li><strong>Product Positioning Clarity:</strong> <a href="https://redirect.github.com/thesysdev/openui/pull/1095">PR #1095</a> (home page restructure) and <a href="https://redirect.github.com/thesysdev/openui/pull/1108">PR #1108</a> (C1 redirect) reveal a strategic consolidation of the product lineup, explicitly naming &quot;OpenUI Cloud&quot; and &quot;C1 by Thesys&quot; to reduce historical confusion between the brands.</li>
-</ul>
-<h4>7. User Feedback Summary</h4>
-<p>Due to the absence of newly opened issues and a lack of comments on today&#39;s PRs, direct user feedback is not observable for this 24-hour period. However, the core team&#39;s focus on streamlining the CLI experience (quiet installs, spinners, Vercel deploy commands) and clarifying the C1-to-OpenUI Cloud documentation transition implicitly addresses anticipated friction points around deployment complexity and product identity.</p>
-<h4>8. Backlog Watch</h4>
-<p>No long-unanswered issues or stale PRs were identified in today&#39;s data. However, <a href="https://redirect.github.com/thesysdev/openui/pull/1095">PR #1095</a> (Home page restructure) is explicitly marked by the author as a &quot;Work in progress, opened so it can be picked up by someone else&quot; and is &quot;Not ready to merge.&quot; This PR requires maintainer attention to define next steps, provide design direction, or guide community contributors to completion.</p>
-</details>
-
-<details>
-<summary><strong>json-render</strong> — <a href="https://github.com/vercel-labs/json-render">vercel-labs/json-render</a></summary>
-
-<h1>json-render Project Digest: 2026-09-01</h1>
-<h2>1. Today&#39;s Overview</h2>
-<p>On 2026-09-01, the <code>json-render</code> project experienced no issue activity but saw notable pull request momentum with six updates (five closed, one open). The closure of the version preparation PR for v0.19.1, alongside critical dependency fixes and framework upgrades, signals an imminent release and a concentrated effort toward monorepo stability. Activity is primarily driven by core maintainers, indicating a structured push toward the next stable iteration rather than organic community feature growth today. Overall project health appears stable, with active resolution of build-blocking type errors and alignment with modern framework releases.</p>
-<h2>2. Releases</h2>
-<p>No new releases were published today. However, the closure of <a href="https://redirect.github.com/vercel-labs/json-render/pull/305">PR #305</a> (prepare v0.19.1) indicates that version <strong>0.19.1</strong> is queued and likely to be released imminently. Based on the PR, v0.19.1 will include zod 4.4+ compatibility (peer-only zod), <code>visible</code> validation adjustments, and build/type fixes.</p>
-<h2>3. Project Progress</h2>
-<p>Significant progress was made in clearing the PR backlog and preparing the codebase for the next version. Key closed PRs include:</p>
-<ul>
-<li><a href="https://redirect.github.com/vercel-labs/json-render/pull/305">PR #305</a>: Prepared the v0.19.1 release, bumping all <code>@json-render/*</code> packages and updating the changelog.</li>
-<li><a href="https://redirect.github.com/vercel-labs/json-render/pull/303">PR #303</a>: Resolved dependency conflicts by making <code>zod</code> a peer-only dependency in <code>core</code> and <code>shadcn-svelte</code>, preventing package managers from installing duplicate copies.</li>
-<li><a href="https://redirect.github.com/vercel-labs/json-render/pull/304">PR #304</a>: Fixed build-breaking TypeScript errors related to <code>Buffer</code>/<code>Uint8Array</code> incompatibilities in the <code>image</code> and <code>react-pdf</code> packages.</li>
-<li><a href="https://redirect.github.com/vercel-labs/json-render/pull/233">PR #233</a>: Standardized the monorepo by upgrading Next.js to 16.2 across all apps and examples.</li>
-<li><a href="https://redirect.github.com/vercel-labs/json-render/pull/191">PR #191</a>: Added Svelte and Vue clients for the Model Context Protocol (MCP), expanding the framework coverage for AI agent integrations.</li>
-</ul>
-<h2>4. Community Hot Topics</h2>
-<p>There are no heavily commented or highly reacted issues/PRs today, reflecting a low-interaction, execution-focused day. However, the underlying themes of the closed PRs indicate strong ecosystem alignment needs. The closure of <a href="https://redirect.github.com/vercel-labs/json-render/pull/191">PR #191</a> (MCP clients for Svelte/Vue) highlights a growing demand for cross-framework AI agent compatibility, while the Next.js 16.2 upgrade (<a href="https://redirect.github.com/vercel-labs/json-render/pull/233">PR #233</a>) reflects ongoing pressure to keep pace with the rapidly evolving frontend ecosystem.</p>
-<h2>5. Bugs &amp; Stability</h2>
-<ul>
-<li><strong>High Severity:</strong> Build failures in <code>@json-render/image</code> and <code>@json-render/react-pdf</code> due to <code>Buffer</code>/<code>Uint8Array</code> type incompatibilities breaking <code>dts</code> generation and <code>check-types</code>. Fix merged in <a href="https://redirect.github.com/vercel-labs/json-render/pull/304">PR #304</a>.</li>
-<li><strong>Medium Severity:</strong> Dependency resolution bugs where package managers resolved duplicate, conflicting copies of <code>zod</code> (direct vs. peer). Fixed by moving to peer-only dependencies in <a href="https://redirect.github.com/vercel-labs/json-render/pull/303">PR #303</a>.</li>
-<li><strong>Low Severity:</strong> TypeScript strict-mode implicit <code>any</code> type errors (<code>TS7006</code>) in internal devtools packages for React and Solid. An open fix exists in <a href="https://redirect.github.com/vercel-labs/json-render/pull/333">PR #333</a>.</li>
-</ul>
-<h2>6. Feature Requests &amp; Roadmap Signals</h2>
-<p>The most prominent roadmap signal is the official support for the Model Context Protocol (MCP) across non-React frameworks, as seen in the closed <a href="https://redirect.github.com/vercel-labs/json-render/pull/191">PR #191</a>. This firmly positions <code>json-render</code> as a UI rendering layer built with AI agent interoperability in mind. The preparation of v0.19.1 (<a href="https://redirect.github.com/vercel-labs/json-render/pull/305">PR #305</a>) indicates the immediate roadmap focuses heavily on Zod 4.4+ compatibility, strict type-safety improvements, and Next.js 16.2 support.</p>
-<h2>7. User Feedback Summary</h2>
-<p>Direct user feedback via issues is absent today. Indirectly, the bugs resolved in recent PRs reveal developer pain points: consumers were experiencing build failures related to Node.js <code>Buffer</code> types in PDF/Image rendering (<a href="https://redirect.github.com/vercel-labs/json-render/pull/304">PR #304</a>) and dependency bloat/conflicts from duplicate <code>zod</code> installations (<a href="https://redirect.github.com/vercel-labs/json-render/pull/303">PR #303</a>). A community contributor also flagged strict TypeScript errors in devtools (<a href="https://redirect.github.com/vercel-labs/json-render/pull/333">PR #333</a>), showing that end-users are actively consuming the library in strict TS environments.</p>
-<h2>8. Backlog Watch</h2>
-<p>There are no long-dormant issues visible in today&#39;s data snapshot. However, the newly opened <a href="https://redirect.github.com/vercel-labs/json-render/pull/333">PR #333</a> (fix(devtools): resolve ts7006 implicit-any bug) warrants prompt maintainer attention. Since v0.19.1 was just prepped via PR #305, this devtools fix might miss the current release cycle, making it a prime candidate for a fast-follow patch (e.g., v0.19.2) to prevent strict-mode TS regressions for devtools users.</p>
-</details>
-
-<details>
-<summary><strong>CopilotKit</strong> — <a href="https://github.com/CopilotKit/CopilotKit">CopilotKit/CopilotKit</a></summary>
-
-<h1>CopilotKit Project Digest — 2026-09-01</h1>
-<h2>1. Today&#39;s Overview</h2>
-<p>CopilotKit is experiencing a high-velocity development cycle, culminating in the release of <strong>v1.70.0</strong>. The project saw substantial activity in the last 24 hours, with 58 PRs updated (36 merged/closed) and 5 issues updated (3 closed). Maintainers are heavily focused on stabilizing the &quot;Intelligence&quot; managed runtime, integrating AWS Marketplace entitlements, and squashing critical frontend tool registration bugs. The rapid merging of architectural PRs alongside significant bug fixes indicates a healthy, fast-moving project preparing for broader enterprise adoption and framework expansion.</p>
-<h2>2. Releases</h2>
-<ul>
-<li><strong><a href="https://github.com/CopilotKit/CopilotKit/releases/">v1.70.0</a></strong>: Released on 2026-08-31. This minor version bump includes major under-the-hood shifts for managed services and crucial bug fixes.<ul>
-<li><strong>Key Changes</strong>: Introduction of managed Intelligence authority and entitlements, replacing legacy license tokens with <code>CPK_INTELLIGENCE_API_KEY</code>. </li>
-<li><strong>Bug Fixes</strong>: Resolved silent dropping of frontend tools when <code>openGenerativeUI</code> is enabled, and fixed an infinite loop bug in Slack channels.</li>
-<li><strong>Migration Notes</strong>: Starter templates and AgentCore managed setups must migrate from <code>COPILOTKIT_LICENSE_TOKEN</code> to <code>CPK_INTELLIGENCE_API_KEY</code>. The <code>ɵlearning</code> path is deprecated in favor of the public <code>getLearningContainerId</code> API (per PR <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6746">#6746</a>).</li>
-</ul>
-</li>
-</ul>
-<h2>3. Project Progress</h2>
-<p>Significant architectural and feature advancements landed today, primarily driven by the managed &quot;Intelligence&quot; initiative and frontend stability:</p>
-<ul>
-<li><strong>Managed Intelligence &amp; AWS Integration</strong>: PR <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6098">#6098</a> (Intelligence authority) and PR <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6188">#6188</a> (aligning starter templates) were merged, establishing <code>CPK_INTELLIGENCE_API_KEY</code> and Cognito subject binding. PR <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6811">#6811</a> repinned the monorepo to v1.70.0.</li>
-<li><strong>Frontend Tooling Reliability</strong>: PR <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6524">#6524</a> fixed frontend tools being silently dropped, and PR <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6794">#6794</a> fixed a React race condition where tools weren&#39;t registered before sibling effects ran.</li>
-<li><strong>Channels/Slack Stability</strong>: Merged PR <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6717">#6717</a> stopped an infinite reply loop in Slack, and PR <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6813">#6813</a> collapsed duplicate packages in the AWS lambda lock file.</li>
-</ul>
-<h2>4. Community Hot Topics</h2>
-<ul>
-<li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/1746">Issue #1746</a> &amp; <a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/4952">Issue #4952</a></strong>: These highly impactful issues highlighted underlying needs for more flexible Human-in-the-loop (HITL) catch-all actions and reliable frontend tool registration. Both were closed today, resolved by <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6524">PR #6524</a>, signaling maintainers are highly responsive to core workflow blockers.</li>
-<li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6146">PR #6146</a></strong> (Render arbitrary JSX as images via Takumi): This open PR is generating interest for allowing React JSX to be rendered to PNG for channel bots, showing the community&#39;s desire for richer UI in non-web platforms like Slack/Teams.</li>
-<li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6222">PR #6222</a></strong> (Vue agentic chat): A strong signal from contributors pushing CopilotKit beyond the React ecosystem into Vue 3.</li>
-</ul>
-<h2>5. Bugs &amp; Stability</h2>
-<ul>
-<li><strong>Critical</strong>: <a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/4952">Issue #4952</a> / <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6524">PR #6524</a> – Frontend tools (<code>useFrontendTool</code>, <code>useHumanInTheLoop</code>) were silently dropped when <code>openGenerativeUI</code> was enabled without a provider prop. <strong>Fix merged</strong>.</li>
-<li><strong>High</strong>: <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6717">PR #6717</a> – Slack channels infinite loop: A single <code>@bot say hi</code> resulted in ~50 identical replies in 8 seconds due to Slack <code>message_changed</code> events. <strong>Fix merged</strong>.</li>
-<li><strong>Medium</strong>: <a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6794">PR #6794</a> – React effect race condition where frontend tools weren&#39;t registered in time for sibling effects. <strong>Fix merged</strong>.</li>
-<li><strong>Low</strong>: <a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/6798">Issue #6798</a> – GitHub release changelogs are frequently empty, hindering version tracking. <strong>Open, no fix PR yet</strong>.</li>
-</ul>
-<h2>6. Feature Requests &amp; Roadmap Signals</h2>
-<ul>
-<li><strong>Catch-all HITL Actions</strong> (<a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/1746">Issue #1746</a>): Users want wildcard <code>useCopilotAction</code> to handle HITL for <em>n</em> number of tools without writing multiple hooks. Now implemented.</li>
-<li><strong>Agent Memory</strong> (<a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/6480">Issue #6480</a>): Proposed &quot;ViBo&quot; memory layer for agents to reduce token usage by 97.5%. Issue is closed; this could signal upcoming native memory optimizations or integration partnerships.</li>
-<li><strong>Ephemeral Slack Messages</strong> (<a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6719">PR #6719</a>): Open PR to support private/ephemeral messages in Slack. This is a strong roadmap signal for multi-user channel environments where bot responses shouldn&#39;t spam the whole channel.</li>
-<li><strong>Marketplace Entitlements</strong> (<a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6789">PR #6789</a>): AWS Marketplace integration suggests CopilotKit is gearing up for enterprise SaaS distribution.</li>
-</ul>
-<h2>7. User Feedback Summary</h2>
-<ul>
-<li><strong>Pain Points</strong>: Silent failures are deeply frustrating. Users reported wasting significant time debugging why frontend tools or catch-all actions weren&#39;t triggering (Issues <a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/4952">#4952</a>, <a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/1746">#1746</a>). Additionally, poor changelog documentation (<a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/6798">Issue #6798</a>) makes it hard for maintainers and users to track what changed between releases.</li>
-<li><strong>Use Cases</strong>: Developers are building complex multi-tool workflows requiring dynamic HITL, rather than hardcoding individual actions. Enterprise users are deploying via AWS and requiring robust Cognito/Marketplace entitlement flows.</li>
-<li><strong>Sentiment</strong>: Overall positive and engaged; the community is pushing the library into advanced agentic workflows (memory, dynamic HITL, Vue support, channel rendering) rather than simple chat wrappers.</li>
-</ul>
-<h2>8. Backlog Watch</h2>
-<ul>
-<li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/6798">Issue #6798</a></strong>: Empty changelogs. Needs automated enforcement in the CI/CD release process so users know what v1.70.0 actually ships beyond PR titles.</li>
-<li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/pull/6808">PR #6808</a></strong>: Porting public examples to v2. This is critical for developer onboarding; the fact that the official website still links to v1 API examples is a friction point that needs maintainer priority.</li>
-<li><strong><a href="https://redirect.github.com/CopilotKit/CopilotKit/issues/592">Issue #592</a></strong>: Renovate Dependency Dashboard. A perpetually open bot issue, but necessary for tracking technical debt and security vulnerabilities in the monorepo.</li>
 </ul>
 </details>
 
